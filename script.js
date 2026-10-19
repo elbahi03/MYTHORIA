@@ -853,24 +853,21 @@ const boosters = [
         id: 1,
         nom: "Beginner Pack",
         prix: 100,
+        icon: "./img/Beginner-Pack.png",
         nombreCartes: 5
     },
     {
         id: 2,
         nom: "Summoning of the Legends",
         prix: 250,
+        icon: "./img/Summoning -Legends.png",
         nombreCartes: 5
     },
     {
         id: 3,
         nom: "Dark Summoning",
         prix: 400,
-        nombreCartes: 5
-    },
-    {
-        id: 4,
-        nom: "Lucky Pack",
-        prix: 600,
+        icon: "./img/Dark Summoning.png",
         nombreCartes: 5
     }
 ];
@@ -878,3 +875,16 @@ const boosters = [
 // le panier :
 
 const panier = [];
+
+// affichage dans les boosters disponibles :
+const packes = document.getElementById("boosters");
+
+for(let i=0 ; i< boosters.length ; i++ ){
+    packes.innerHTML += `
+    <div class="booster">
+            <h3>${boosters[i].nom}</h3>
+            <p>${boosters[i].prix} DH</p>
+            <p>${boosters[i].nombreCartes} DH</p>
+        </div>
+    `
+}

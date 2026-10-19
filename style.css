@@ -214,6 +214,58 @@ header {
     font-size: 30px;
 }
 
-.carte-categorie:hover  .carte-img img{
+.carte-categorie:hover .carte-img img {
     transform: scale(1.1);
+}
+
+/* section : boosters  */
+
+.boosters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.booster {
+    width: 20%;
+    height: 250px;
+    background-image: url("./img/bg-booster.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+.bosster-img {
+    width: 80%;
+    height: 350px;
+}
+
+.bosster-img img {
+    width: 100%;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.booster h3 {
+    font-size: 30px;
+    color: #C2703C;
+    text-decoration: underline;
+}
+
+.booster p {
+    margin-top: -25px;
+    color: #9FB4DBff;
+    font-size: 30px;
+}
+
+.btn-booster {
+    display: block;
+    margin: 0 auto;
 }
