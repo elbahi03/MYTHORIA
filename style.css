@@ -1,5 +1,67 @@
-/* --ink-black: #0D0B20ff;
---twilight-indigo: #303666ff;
---wisteria-blue: #89A4D8ff;
---alabaster-grey: #D0D8E0ff; */
+/* 
+--twilight-indigo: #2E2F66ff;
+--french-blue: #3E498Aff;
+--tan: #DEBE99ff;
+--powder-blue: #9FB4DBff; */
 
+@import url('https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap');
+
+.manufacturing-consent-regular {
+    font-family: "Manufacturing Consent", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: "Manufacturing Consent", system-ui, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #2E2F66ff;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.header-contenue {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px 0 40px;
+}
+
+.logo-header img {
+    height: 60px;
+}
+
+.menu {
+    display: flex;
+    gap: 32px;
+    list-style-type: none;
+    
+}
+
+.menu a {
+    color: #DEBE99ff;
+}
+
+.menu .lien-actif {
+    color: #9FB4DBff;
+    font-weight: 600;
+    border-bottom-color: #9FB4DBff;
+}
+
+.menu a {
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+    color: #9FB4DBff;
+}
