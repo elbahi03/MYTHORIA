@@ -71,11 +71,18 @@ a:focus-visible,
 
 .title-principal {
     display: flex;
-    gap: 10px
+    gap: 10px;
+    align-items: center;
+
 }
 
 .title-principal img {
     height: 75px;
+}
+
+.title-principal h2 {
+    font-size: 39px;
+    color: #EAAB62;
 }
 
 /* section : header  */
@@ -130,6 +137,8 @@ header {
     color: #9FB4DBff;
 }
 
+/* page : home */
+
 /* section : hero  */
 
 .hero {
@@ -156,4 +165,55 @@ header {
     flex-direction: row;
     gap: 25px;
     align-items: center;
+}
+
+/* section : les categorie  */
+
+.cartes-categorie {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.carte-categorie {
+    width: 20%;
+    height: 400px;
+    background-image: url("./img/bg-cart.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+.carte-img {
+    width: 80%;
+    height: 350px;
+}
+
+.carte-img img {
+    width: 100%;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.carte-categorie h3 {
+    font-size: 40px;
+    color: #3E498Aff;
+    text-decoration: underline;
+}
+
+.cartes-categorie p {
+    margin-top: -25px;
+    color: #9FB4DBff;
+    font-size: 30px;
+}
+
+.carte-categorie:hover  .carte-img img{
+    transform: scale(1.1);
 }
