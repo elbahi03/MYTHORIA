@@ -1,7 +1,7 @@
 /* 
 --twilight-indigo: #2E2F66ff;
 --french-blue: #3E498Aff;
---tan: #DEBE99ff;
+--tan: #C2703C;
 --powder-blue: #9FB4DBff; */
 
 @import url('https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap');
@@ -16,17 +16,66 @@
     font-family: "Manufacturing Consent", system-ui, sans-serif;
 }
 
-a {
-  text-decoration: none;
+body {
+    background-color: #2E2F66ff;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid #9FB4DBff;
+    outline-offset: 2px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-principal {
+    background-color: #3E498Aff;
+    border: 1px solid #9FB4DBff;
+    color: #9FB4DBff;
+    transition: 0.5s;
+}
+
+.btn-principal:hover {
+    background-color: #9FB4DBff;
+    color: #3E498Aff;
+    transform: scale(1.1);
+    outline-offset: 2px;
+}
+
+.btn-secondaire {
+    background-color: #9FB4DBff;
+    border: 1px solid #3E498Aff;
+    color: #3E498Aff;
+    transition: 0.5s;
+}
+
+.btn-secondaire:hover {
+    background-color: #3E498Aff;
+    color: #9FB4DBff;
+    transform: scale(1.1);
+    outline-offset: 2px;
+}
+
+/* section : header  */
+
 header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    width: 100%;
     background-color: #2E2F66ff;
     border-bottom: 1px solid #E5E7EB;
 }
+
 
 .header-contenue {
     display: flex;
@@ -44,24 +93,50 @@ header {
     display: flex;
     gap: 32px;
     list-style-type: none;
-    
+
 }
 
 .menu a {
-    color: #DEBE99ff;
+    color: #EAAB62;
+    font-size: 20px;
 }
 
 .menu .lien-actif {
     color: #9FB4DBff;
-    font-weight: 600;
     border-bottom-color: #9FB4DBff;
 }
 
 .menu a {
+    
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
 }
 
 .menu a:hover {
     color: #9FB4DBff;
+}
+
+/* section : hero  */
+
+.hero {
+    background-image: url(./img/bghero.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 45px;
+    color: #EAAB62;
+}
+
+.btn-hero {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
 }
