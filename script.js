@@ -842,6 +842,7 @@ const cartes = [
 
 ];
 
+
 // les mon cartes :
 
 const mycartes = [];
@@ -884,6 +885,7 @@ const boosters = [
 
 const Panier_achat = [];
 
+// localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
 
 
 // affichage dans les boosters disponibles :
@@ -923,13 +925,54 @@ if (window.location.pathname === '/boutique.html') {
         </div>
     `
     }
+    console.log(Panier_achat);
+    console.log(localStorage.getItem(`Panier_achat`))
+    let consol = localStorage.getItem(`Panier_achat`)
+    consol = JSON.parse(consol)
+    // Panier_achat.push(consol)
+    for (let con of consol) {
+        Panier_achat.push(con)
+    }
+    // console.log(consol[1]);
+    // console.log(boosters[consol[0]])
+    // prix total :
+    // let total = 0;
+    function total_prix() {
+        let total = 0;
+        for (let index of Panier_achat) {
+            total += boosters[index - 1].prix
+        }
+        return total;
+    }
+    console.log("total :" + total_prix());
+    
+    function affichepanier() {
+        if (Panier_achat.length > 0) {
+            for (let i = 0; i < Panier_achat.length; i++) {
+                console.log(boosters[Panier_achat[i] - 1])
+                panier.innerHTML += `
+                <div class="achat">
+                    <p>${boosters[Panier_achat[i] - 1].nom}</p>
+                    <p>${boosters[Panier_achat[i] - 1].prix}</p>
+                    <button class="supprimer" name="${boosters[Panier_achat[i] - 1].id}">supprimer ${boosters[Panier_achat[i] - 1].nom} </button>
+                </div>
+    `
+            }
+        }
+    }
 
-    let total = 0;
-
-
+    affichepanier()
+    let num_total = document.getElementById("total")
+    num_total.textContent = total_prix() ;
     function ajouterProduit(index) {
 
-        const titre = document.createElement('li');
+        Panier_achat.push(index + 1);
+        consol.push(index + 1);
+        localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
+        // affichepanier()
+        const achat = document.createElement('div');
+        achat.className = "achat"
+        const titre = document.createElement('p');
         titre.textContent = `${boosters[index].nom}`
         const p = document.createElement('p');
         p.textContent = `${boosters[index].prix}`
@@ -938,13 +981,14 @@ if (window.location.pathname === '/boutique.html') {
         btn.className = 'supprimer';
         btn.name = `${boosters[index].id}`
 
-        titre.appendChild(p);
-        titre.appendChild(btn);
-        panier.appendChild(titre);
+        achat.appendChild(titre);
+        achat.appendChild(p);
+        achat.appendChild(btn);
+        panier.appendChild(achat);
 
-        Panier_achat.push(index+1);
         console.log(Panier_achat)
-        total += boosters[index].prix;
+        console.log(total_prix());
+        let total = total_prix()
         totalSpan.textContent = total;
     }
 
@@ -978,15 +1022,16 @@ if (window.location.pathname === '/boutique.html') {
             index = Number(index)
             let i = Panier_achat.indexOf(index)
             console.log(i)
-            Panier_achat.splice(i,1);
+            Panier_achat.splice(i, 1);
+            localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
             console.log(Panier_achat);
-            const li = e.target.parentNode;
+            // affichepanier()
             // console.log(li.textContent.split('_'));
-
-            total -= boosters[index -1].prix;
-
+            // total -= boosters[index - 1].prix;
+            let total = total_prix()
             totalSpan.textContent = total;
-
+            const li = e.target.parentNode;
+            console.log(li);
             li.remove();
         }
     })
