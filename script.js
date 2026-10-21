@@ -842,7 +842,6 @@ const cartes = [
 
 ];
 
-
 // les mon cartes :
 
 const mycartes = [];
@@ -885,13 +884,89 @@ const boosters = [
 
 const Panier_achat = [];
 
-// localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
+
+// verifier de local storage :
+if (localStorage.getItem("Panier_achat") !== null) {
+    // get donnes de panier au local :
+    let consol = localStorage.getItem(`Panier_achat`)
+    consol = JSON.parse(consol)
+    for (let con of consol) {
+        Panier_achat.push(con)
+    }
+} else {
+    localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
+}
 
 
-// affichage dans les boosters disponibles :
+//// les variables :
+const boutique = document.querySelector("#boutique");
+const panier = document.querySelector('#panier');
+const totalSpan = document.querySelector('#total');
+let num_total = document.getElementById("total");
+const length_panier = document.querySelector("#length_panier")
+const packes = document.querySelector("#boosters");
+
+length_panier.textContent = Panier_achat.length;
+num_total.textContent = total_prix();
+
+// les functions :
+
+/// function de prix total de prix :
+function total_prix() {
+    let total = 0;
+    for (let index of Panier_achat) {
+        total += boosters[index - 1].prix;
+    }
+    return total;
+}
+
+/// affiche all les paniers disponible :
+function affichepanier() {
+    if (Panier_achat.length > 0) {
+        for (let i = 0; i < Panier_achat.length; i++) {
+            console.log(boosters[Panier_achat[i] - 1])
+            panier.innerHTML += `
+                <div class="achat">
+                    <p>${boosters[Panier_achat[i] - 1].nom}</p>
+                    <p>${boosters[Panier_achat[i] - 1].prix}</p>
+                    <button class="supprimer" name="${boosters[Panier_achat[i] - 1].id}">supprimer</button>
+                </div>
+    `
+        }
+    }
+}
+
+/// function ajouter un produit un panier :
+function ajouterProduit(index) {
+    Panier_achat.push(index + 1);
+    localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
+
+    // creation de div dans panier
+    const achat = document.createElement('div');
+    achat.className = "achat"
+    const titre = document.createElement('p');
+    titre.textContent = `${boosters[index].nom}`
+    const p = document.createElement('p');
+    p.textContent = `${boosters[index].prix}`
+    const btn = document.createElement('button');
+    btn.textContent = 'supprimer';
+    btn.className = 'supprimer';
+    btn.name = `${boosters[index].id}`
+
+    achat.appendChild(titre);
+    achat.appendChild(p);
+    achat.appendChild(btn);
+    panier.appendChild(achat);
+
+    let total = total_prix()
+    totalSpan.textContent = total;
+    length_panier.textContent = Panier_achat.length;
+}
+
+// dom de page home :
 if (window.location.pathname === '/') {
-    const packes = document.querySelector("#boosters");
 
+    // affiche les boosters disponible :
     for (let i = 0; i < boosters.length; i++) {
         packes.innerHTML += `
     <div class="booster">
@@ -903,135 +978,46 @@ if (window.location.pathname === '/') {
     }
 }
 
-// affichage les boosters disponible : 
+// dom de page boutique :
 if (window.location.pathname === '/boutique.html') {
 
-    let boutique = document.querySelector("#boutique");
-    const panier = document.querySelector('#panier')
-    const totalSpan = document.querySelector('#total');
-    console.log(boutique);
-
-
+    // affiche cart booster :
     for (let i = 0; i < boosters.length; i++) {
         boutique.innerHTML += `
     <div class="booster">
             <h3>${boosters[i].nom}</h3>
             <p>${boosters[i].prix} DH</p>
             <p>${boosters[i].nombreCartes} cartes</p>
-            <form  name="achat">
-            <input value="${boosters[i].id}" hidden>
             <button class="ajouter" name="${boosters[i].id}"> Ajouter au panier</button>
-            </form> 
         </div>
     `
     }
-    console.log(Panier_achat);
-    console.log(localStorage.getItem(`Panier_achat`))
-    let consol = localStorage.getItem(`Panier_achat`)
-    consol = JSON.parse(consol)
-    // Panier_achat.push(consol)
-    for (let con of consol) {
-        Panier_achat.push(con)
-    }
-    // console.log(consol[1]);
-    // console.log(boosters[consol[0]])
-    // prix total :
-    // let total = 0;
-    function total_prix() {
-        let total = 0;
-        for (let index of Panier_achat) {
-            total += boosters[index - 1].prix
-        }
-        return total;
-    }
-    console.log("total :" + total_prix());
-    
-    function affichepanier() {
-        if (Panier_achat.length > 0) {
-            for (let i = 0; i < Panier_achat.length; i++) {
-                console.log(boosters[Panier_achat[i] - 1])
-                panier.innerHTML += `
-                <div class="achat">
-                    <p>${boosters[Panier_achat[i] - 1].nom}</p>
-                    <p>${boosters[Panier_achat[i] - 1].prix}</p>
-                    <button class="supprimer" name="${boosters[Panier_achat[i] - 1].id}">supprimer ${boosters[Panier_achat[i] - 1].nom} </button>
-                </div>
-    `
-            }
-        }
-    }
 
-    affichepanier()
-    let num_total = document.getElementById("total")
-    num_total.textContent = total_prix() ;
-    function ajouterProduit(index) {
 
-        Panier_achat.push(index + 1);
-        consol.push(index + 1);
-        localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
-        // affichepanier()
-        const achat = document.createElement('div');
-        achat.className = "achat"
-        const titre = document.createElement('p');
-        titre.textContent = `${boosters[index].nom}`
-        const p = document.createElement('p');
-        p.textContent = `${boosters[index].prix}`
-        const btn = document.createElement('button');
-        btn.textContent = 'supprimer';
-        btn.className = 'supprimer';
-        btn.name = `${boosters[index].id}`
+    affichepanier();
 
-        achat.appendChild(titre);
-        achat.appendChild(p);
-        achat.appendChild(btn);
-        panier.appendChild(achat);
-
-        console.log(Panier_achat)
-        console.log(total_prix());
-        let total = total_prix()
-        totalSpan.textContent = total;
-    }
-
+    // ajouter un panier :
     boutique.addEventListener("click", (ev) => {
-        ev.preventDefault(); // stop acualisy de page 
-        console.log(ev.target.name);
-        let index = ev.target.name - 1;
-        ajouterProduit(index)
+        if (ev.target.classList.contains('ajouter')) {
+            ev.preventDefault(); // stop acualisy de page 
+            console.log(ev.target.name);
+            let index = ev.target.name - 1;
+            ajouterProduit(index)
+        }
     })
-
-    // catalogue.addEventListener('click', (e) => {
-
-    //     console.log(e.target);
-    //     if (e.target.classList.contains('ajouter')) {
-    //         const li = e.target.closest('.produit')
-    //         const titre = li.querySelector('.titre').textContent;
-    //         const prixTexte = li.querySelector('.prix').textContent.split('_')[1].replace('DH', '')
-
-    //         const prix = parseInt(prixTexte, 10);
-    //         console.log(prixTexte);
-
-    //         ajouterProduit(titre, prix)
-    //     }
-    // })
 
     //susprimer en panier
     panier.addEventListener('click', (e) => {
         if (e.target.classList.contains('supprimer')) {
             let index = e.target.name;
-            console.log(`${e.target.name}`);
             index = Number(index)
             let i = Panier_achat.indexOf(index)
-            console.log(i)
             Panier_achat.splice(i, 1);
             localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
-            console.log(Panier_achat);
-            // affichepanier()
-            // console.log(li.textContent.split('_'));
-            // total -= boosters[index - 1].prix;
+            length_panier.textContent = Panier_achat.length;
             let total = total_prix()
             totalSpan.textContent = total;
             const li = e.target.parentNode;
-            console.log(li);
             li.remove();
         }
     })

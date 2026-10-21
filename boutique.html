@@ -8,6 +8,7 @@
     <!-- link de css  -->
     <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
+    <link rel="icon" href="./img/logomin.png">
 </head>
 
 <body>
@@ -23,6 +24,7 @@
                     <li><a href="/">Votre boosters</a></li>
                     <li><a href="/">Ma collection</a></li>
                     <li><a href="/">Ma deck</a></li>
+                    <li><a href="/">panier :<span id="length_panier">0</span></a></li>
                     <li><a href="/">Support</a></li>
                 </ul>
             </nav>
@@ -35,14 +37,23 @@
         </div>
         <section>
             <div id="boutique" class="boutiques">
-
             </div>
-            <h2>Panier</h2>
-            <div id="panier">
-
+        </section>
+        <section>
+            <div class="title-principal">
+                <img src="./img/logomin.png" alt="mini logo de web site des carts">
+                <h2>Panier :</h2>
+                <p>Total : <span id="total">0</span></p>
             </div>
-            
-            <p>Total : <span id="total">0</span></p>
+            <div class="lepanier">
+                <div id="panier" class="panier">
+                </div>
+                <!-- <p>Total : <span id="total">0</span></p> -->
+            </div>
+            <div>
+                <button class="btn">Valider votre achat</button>
+            </div>
+            </div>
         </section>
     </main>
 </body>

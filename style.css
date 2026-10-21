@@ -275,4 +275,22 @@ header {
 
 .boutiques {
     display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.panier {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px 30px;
+    gap: 20px;
+}
+
+.achat {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
 }
