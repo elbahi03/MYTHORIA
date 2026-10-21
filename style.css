@@ -1,7 +1,7 @@
 /* 
 --twilight-indigo: #2E2F66ff;
 --french-blue: #3E498Aff;
---tan: #C2703C;
+--tan: #EAAB62;
 --powder-blue: #9FB4DBff; */
 
 @import url('https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap');
@@ -255,7 +255,7 @@ header {
 
 .booster h3 {
     font-size: 30px;
-    color: #C2703C;
+    color: #EAAB62;
     text-decoration: underline;
 }
 
@@ -268,4 +268,11 @@ header {
 .btn-booster {
     display: block;
     margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+/* page : botique  */
+
+.boutiques {
+    display: flex;
 }

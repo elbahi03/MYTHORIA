@@ -846,6 +846,10 @@ const cartes = [
 
 const mycartes = [];
 
+// les mon boosters :
+
+const myboosters = [];
+
 // les booster :
 
 const boosters = [
@@ -854,37 +858,136 @@ const boosters = [
         nom: "Beginner Pack",
         prix: 100,
         icon: "./img/Beginner-Pack.png",
-        nombreCartes: 5
+        nombreCartes: 5,
+        description: "Un pack idéal pour les nouveaux aventuriers. Découvrez des héros, des monstres et des sorts pour commencer votre collection."
+
     },
     {
         id: 2,
         nom: "Summoning of the Legends",
         prix: 250,
         icon: "./img/Summoning -Legends.png",
-        nombreCartes: 5
+        nombreCartes: 5,
+        description: "Un booster premium offrant de meilleures chances d'obtenir des cartes rares, épiques et légendaires. Invoquez les créatures les plus puissantes de Mythoria."
     },
     {
         id: 3,
         nom: "Dark Summoning",
         prix: 400,
         icon: "./img/Dark Summoning.png",
-        nombreCartes: 5
+        nombreCartes: 5,
+        description: "Plongez dans les ténèbres avec des monstres redoutables, des serviteurs obscurs et des sorts interdits. Un booster destiné aux collectionneurs les plus audacieux."
     }
 ];
 
 // le panier :
 
-const panier = [];
+const Panier_achat = [];
+
+
 
 // affichage dans les boosters disponibles :
-const packes = document.getElementById("boosters");
+if (window.location.pathname === '/') {
+    const packes = document.querySelector("#boosters");
 
-for(let i=0 ; i< boosters.length ; i++ ){
-    packes.innerHTML += `
+    for (let i = 0; i < boosters.length; i++) {
+        packes.innerHTML += `
     <div class="booster">
             <h3>${boosters[i].nom}</h3>
             <p>${boosters[i].prix} DH</p>
-            <p>${boosters[i].nombreCartes} DH</p>
+            <p>${boosters[i].nombreCartes} cartes</p>
         </div>
     `
+    }
+}
+
+// affichage les boosters disponible : 
+if (window.location.pathname === '/boutique.html') {
+
+    let boutique = document.querySelector("#boutique");
+    const panier = document.querySelector('#panier')
+    const totalSpan = document.querySelector('#total');
+    console.log(boutique);
+
+
+    for (let i = 0; i < boosters.length; i++) {
+        boutique.innerHTML += `
+    <div class="booster">
+            <h3>${boosters[i].nom}</h3>
+            <p>${boosters[i].prix} DH</p>
+            <p>${boosters[i].nombreCartes} cartes</p>
+            <form  name="achat">
+            <input value="${boosters[i].id}" hidden>
+            <button class="ajouter" name="${boosters[i].id}"> Ajouter au panier</button>
+            </form> 
+        </div>
+    `
+    }
+
+    let total = 0;
+
+
+    function ajouterProduit(index) {
+
+        const titre = document.createElement('li');
+        titre.textContent = `${boosters[index].nom}`
+        const p = document.createElement('p');
+        p.textContent = `${boosters[index].prix}`
+        const btn = document.createElement('button');
+        btn.textContent = 'supprimer';
+        btn.className = 'supprimer';
+        btn.name = `${boosters[index].id}`
+
+        titre.appendChild(p);
+        titre.appendChild(btn);
+        panier.appendChild(titre);
+
+        Panier_achat.push(index+1);
+        console.log(Panier_achat)
+        total += boosters[index].prix;
+        totalSpan.textContent = total;
+    }
+
+    boutique.addEventListener("click", (ev) => {
+        ev.preventDefault(); // stop acualisy de page 
+        console.log(ev.target.name);
+        let index = ev.target.name - 1;
+        ajouterProduit(index)
+    })
+
+    // catalogue.addEventListener('click', (e) => {
+
+    //     console.log(e.target);
+    //     if (e.target.classList.contains('ajouter')) {
+    //         const li = e.target.closest('.produit')
+    //         const titre = li.querySelector('.titre').textContent;
+    //         const prixTexte = li.querySelector('.prix').textContent.split('_')[1].replace('DH', '')
+
+    //         const prix = parseInt(prixTexte, 10);
+    //         console.log(prixTexte);
+
+    //         ajouterProduit(titre, prix)
+    //     }
+    // })
+
+    //susprimer en panier
+    panier.addEventListener('click', (e) => {
+        if (e.target.classList.contains('supprimer')) {
+            let index = e.target.name;
+            console.log(`${e.target.name}`);
+            index = Number(index)
+            let i = Panier_achat.indexOf(index)
+            console.log(i)
+            Panier_achat.splice(i,1);
+            console.log(Panier_achat);
+            const li = e.target.parentNode;
+            // console.log(li.textContent.split('_'));
+
+            total -= boosters[index -1].prix;
+
+            totalSpan.textContent = total;
+
+            li.remove();
+        }
+    })
 }
