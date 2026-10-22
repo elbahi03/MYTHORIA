@@ -886,15 +886,21 @@ const Panier_achat = [];
 
 
 // verifier de local storage :
-if (localStorage.getItem("Panier_achat") !== null) {
+if (localStorage.getItem("Panier_achat") !== null && localStorage.getItem("myboosters") !== null) {
     // get donnes de panier au local :
     let consol = localStorage.getItem(`Panier_achat`)
     consol = JSON.parse(consol)
     for (let con of consol) {
         Panier_achat.push(con)
     }
+    let stokes = localStorage.getItem(`myboosters`)
+    stokes = JSON.parse(stokes)
+    for (let stoke of stokes) {
+        myboosters.push(stoke)
+    }
 } else {
     localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
+    localStorage.setItem('myboosters', JSON.stringify(myboosters));
 }
 
 
@@ -903,11 +909,12 @@ const boutique = document.querySelector("#boutique");
 const panier = document.querySelector('#panier');
 const totalSpan = document.querySelector('#total');
 let num_total = document.getElementById("total");
-const length_panier = document.querySelector("#length_panier")
+const length_panier = document.querySelector("#length_panier");
 const packes = document.querySelector("#boosters");
+const achat = document.querySelectorAll("#achat");
+const button = document.getElementById("valider-btn")
 
 length_panier.textContent = Panier_achat.length;
-num_total.textContent = total_prix();
 
 // les functions :
 
@@ -926,7 +933,7 @@ function affichepanier() {
         for (let i = 0; i < Panier_achat.length; i++) {
             console.log(boosters[Panier_achat[i] - 1])
             panier.innerHTML += `
-                <div class="achat">
+                <div class="achat" id="achat">
                     <p>${boosters[Panier_achat[i] - 1].nom}</p>
                     <p>${boosters[Panier_achat[i] - 1].prix}</p>
                     <button class="supprimer" name="${boosters[Panier_achat[i] - 1].id}">supprimer</button>
@@ -944,6 +951,7 @@ function ajouterProduit(index) {
     // creation de div dans panier
     const achat = document.createElement('div');
     achat.className = "achat"
+    achat.id = "achat"
     const titre = document.createElement('p');
     titre.textContent = `${boosters[index].nom}`
     const p = document.createElement('p');
@@ -980,6 +988,8 @@ if (window.location.pathname === '/') {
 
 // dom de page boutique :
 if (window.location.pathname === '/boutique.html') {
+
+    num_total.textContent = total_prix();
 
     // affiche cart booster :
     for (let i = 0; i < boosters.length; i++) {
@@ -1021,4 +1031,64 @@ if (window.location.pathname === '/boutique.html') {
             li.remove();
         }
     })
+}
+
+
+// dom de page home :
+if (window.location.pathname === '/panier.html') {
+    const valider = document.querySelector('#valider');
+    num_total.textContent = total_prix();
+    affichepanier();
+
+    if (Panier_achat.length === 0) {
+        valider.remove();
+    }
+
+    //susprimer en panier
+    panier.addEventListener('click', (e) => {
+        if (e.target.classList.contains('supprimer')) {
+            let index = e.target.name;
+            index = Number(index)
+            let i = Panier_achat.indexOf(index)
+            Panier_achat.splice(i, 1);
+            localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
+            length_panier.textContent = Panier_achat.length;
+            let total = total_prix()
+            totalSpan.textContent = total;
+            const li = e.target.parentNode;
+            li.remove();
+            if (Panier_achat.length === 0) {
+                valider.remove();
+            }
+        }
+    })
+
+    valider.addEventListener('click', (e) => {
+        console.log(e.target.classList.contains('valider-btn'));
+        if (e.target.classList.contains('valider-btn')) {
+            let prix_final = total_prix() ;
+            for (let achat of Panier_achat) {
+                myboosters.push(achat)
+            }
+            Panier_achat.length = 0;
+            localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
+            localStorage.setItem('myboosters', JSON.stringify(myboosters));
+            panier.remove();
+            button.remove();
+
+            // create div de valide la commande :
+            const validation = document.createElement('div');
+            validation.className = "validation"
+            const h3 = document.createElement('h3');
+            h3.textContent = "le achat est valide"
+            const p = document.createElement('p');
+            p.textContent = prix_final + " DH"
+
+            validation.appendChild(h3);
+            validation.appendChild(p);
+            valider.appendChild(validation)
+
+        }
+    })
+
 }

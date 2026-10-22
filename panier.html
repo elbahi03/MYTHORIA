@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYTHORIA</title>
+    <!-- link de css  -->
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <link rel="icon" href="./img/logomin.png">
+</head>
+
+<body>
+    <header>
+        <div class="header-contenue">
+            <div class="logo-header">
+                <a href="/" class="logo-a"><img src="./img/logoprincipal.png" alt="logo de web site des carts"></a>
+            </div>
+            <nav aria-label="Navigation principale">
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/boutique.html">Boutique</a></li>
+                    <li><a href="/">Votre boosters</a></li>
+                    <li><a href="/">Ma collection</a></li>
+                    <li><a href="/">Ma deck</a></li>
+                    <li><a href="/panier.html" class="lien-actif">panier :<span id="length_panier">0</span></a></li>
+                    <li><a href="/">Support</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="title-principal">
+            <img src="./img/logomin.png" alt="mini logo de web site des carts">
+            <h2>Panier</h2>
+        </div>
+        <section >
+            <div id="panier" class="panier">
+            </div>
+            <div id="valider" class="valider">
+                <button class="valider-btn btn btn-principal" id="valider-btn" >valider la comande  : Total  <span id="total">0</span>DH</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
