@@ -857,7 +857,7 @@ const boosters = [
         id: 1,
         nom: "Beginner Pack",
         prix: 100,
-        icon: "./img/Beginner-Pack.png",
+        icon: "./img/cartnormal.png",
         nombreCartes: 5,
         description: "Un pack idéal pour les nouveaux aventuriers. Découvrez des héros, des monstres et des sorts pour commencer votre collection."
 
@@ -866,7 +866,7 @@ const boosters = [
         id: 2,
         nom: "Summoning of the Legends",
         prix: 250,
-        icon: "./img/Summoning -Legends.png",
+        icon: "./img/deuxcart.png",
         nombreCartes: 5,
         description: "Un booster premium offrant de meilleures chances d'obtenir des cartes rares, épiques et légendaires. Invoquez les créatures les plus puissantes de Mythoria."
     },
@@ -874,7 +874,7 @@ const boosters = [
         id: 3,
         nom: "Dark Summoning",
         prix: 400,
-        icon: "./img/Dark Summoning.png",
+        icon: "./img/troiscart.png",
         nombreCartes: 5,
         description: "Plongez dans les ténèbres avec des monstres redoutables, des serviteurs obscurs et des sorts interdits. Un booster destiné aux collectionneurs les plus audacieux."
     }
@@ -898,6 +898,7 @@ if (localStorage.getItem("Panier_achat") !== null && localStorage.getItem("myboo
     for (let stoke of stokes) {
         myboosters.push(stoke)
     }
+    myboosters.sort((a, b) => a - b);
 } else {
     localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
     localStorage.setItem('myboosters', JSON.stringify(myboosters));
@@ -911,8 +912,10 @@ const totalSpan = document.querySelector('#total');
 let num_total = document.getElementById("total");
 const length_panier = document.querySelector("#length_panier");
 const packes = document.querySelector("#boosters");
-const achat = document.querySelectorAll("#achat");
-const button = document.getElementById("valider-btn")
+const achat = document.querySelectorAll("achat");
+const button = document.getElementById("valider-btn");
+const mypacks = document.querySelector("#myboosters");
+// const affichage_cart = document.querySelector("#affichage_cart");
 
 length_panier.textContent = Panier_achat.length;
 
@@ -923,6 +926,7 @@ function total_prix() {
     let total = 0;
     for (let index of Panier_achat) {
         total += boosters[index - 1].prix;
+
     }
     return total;
 }
@@ -939,6 +943,36 @@ function affichepanier() {
                     <button class="supprimer" name="${boosters[Panier_achat[i] - 1].id}">supprimer</button>
                 </div>
     `
+        }
+    }
+}
+
+// function pour affiche all booster de user : 
+function affichemyboosters() {
+    if (myboosters.length !== 0) {
+        for (let i = 0; i < myboosters.length; i++) {
+            const div = document.createElement("div");
+            div.className = "mybooster";
+            div.id = "mybooster";
+            const div_img = document.createElement("div");
+            div_img.className = "mybooster";
+            div_img.id = "mybooster";
+            const pack = document.createElement("img");
+            pack.src = boosters[myboosters[i] - 1].icon;
+            pack.alt = boosters[myboosters[i] - 1].nom + " : " + boosters[myboosters[i] - 1].description;
+            const nom = document.createElement("h3");
+            nom.textContent = boosters[myboosters[i] - 1].nom;
+            const btn = document.createElement("button");
+            btn.textContent = "Open votre Booster";
+            btn.className = "open";
+            btn.id = "open";
+            btn.name = "open";
+
+            div_img.appendChild(pack);
+            div.appendChild(div_img);
+            div.appendChild(nom);
+            div.appendChild(btn);
+            mypacks.appendChild(div);
         }
     }
 }
@@ -1034,7 +1068,7 @@ if (window.location.pathname === '/boutique.html') {
 }
 
 
-// dom de page home :
+// dom de page panier :
 if (window.location.pathname === '/panier.html') {
     const valider = document.querySelector('#valider');
     num_total.textContent = total_prix();
@@ -1066,7 +1100,7 @@ if (window.location.pathname === '/panier.html') {
     valider.addEventListener('click', (e) => {
         console.log(e.target.classList.contains('valider-btn'));
         if (e.target.classList.contains('valider-btn')) {
-            let prix_final = total_prix() ;
+            let prix_final = total_prix();
             for (let achat of Panier_achat) {
                 myboosters.push(achat)
             }
@@ -1091,4 +1125,88 @@ if (window.location.pathname === '/panier.html') {
         }
     })
 
+}
+
+// dom de page votreboosters :
+if (window.location.pathname === '/votreboosters.html') {
+    affichemyboosters();
+    mypacks.addEventListener('click', (e) => {
+        if (e.target.classList.contains('open')) {
+            let local_cart = [];
+            for (let i = 1; i <= 5; i++) {
+                let number = Math.floor(Math.random() * 40);
+                local_cart.push(cartes[number].id);
+            }
+            console.log(local_cart);
+
+            // local storage :
+            // ... 
+
+            // creer model pour voir les cart  :
+            const modal = document.createElement('div');
+            modal.id = "modal";
+            modal.className = "modal";
+            const modal_content = document.createElement('div');
+            modal_content.id = "modal-content";
+            modal_content.className = "modal-content";
+            const span = document.createElement('span');
+            span.textContent = "&times;";
+            span.className = "close";
+            span.id = "close";
+            const titre_modal = document.createElement('h2');
+            const model_cart = document.createElement('div');
+            modal.id = "model_cart";
+            modal.className = "model_cart";
+            for (let i = 0; i < local_cart.length; i++) {
+                console.log(i);
+                let carte = document.createElement('div');
+                carte.className = "modal";
+                carte.id = "modal";
+                // const img_cart = document.createElement('img');
+                // img_cart.src = cartes[local_cart[i] - 1].img;
+                // img_cart.alt = cartes[local_cart[i] - 1].nom + " : " + cartes[local_cart[i] - 1].description;
+                const h3 = document.createElement('h3');
+                h3.textContent = cartes[local_cart[i] - 1].nom;
+                const p = document.createElement('p');
+                p.textContent = cartes[local_cart[i] - 1].categorie;
+
+                // carte.appendChild(img_cart);
+                carte.appendChild(h3);
+                carte.appendChild(p);
+                model_cart.appendChild(carte);
+            }
+
+            const btn_modal = document.createElement("button");
+            btn_modal.className = "to_pagecarte";
+            btn_modal.id = "to_pagecarte";
+            btn_modal.textContent = "voir votre les cartes"
+
+            modal_content.appendChild(titre_modal);
+            modal_content.appendChild(model_cart);
+            modal_content.appendChild(btn_modal);
+            modal.appendChild(modal_content);
+            mypacks.appendChild(modal);
+
+            setTimeout(function () {
+                const yassine = document.getElementById('modal')
+                yassine.style.display = 'none';
+            }, 2000);
+
+            // // Get the modal
+            // const modal_page = document.getElementById("modal");
+            // const span_close = document.getElementsByClassName("close");
+            // modal_page.style.display = "block";
+            // span_close.onclick = function () {
+            //     modal.style.display = "none";
+            // }
+            // window.onclick = function (event) {
+            //     if (event.target == modal) {
+            //         modal.style.display = "none";
+            //     }
+            // }
+            // retirer en node :
+            const li = e.target.parentNode;
+            li.remove();
+        }
+    })
 }
