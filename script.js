@@ -5,7 +5,7 @@ const cartes = [
         id: 1,
         nom: "Squirtle",
         description: "Pokémon Tortaruguina. Nº 0007. Altura: 0,5 m. Peso: 9,0 kg. Quando este Pokémon sente-se ameaçado, esconde-se dentro do seu casco e lança água pela boca.",
-        img: "https://i.pinimg.com/736x/91/0f/1e/910f1e0d9615761e8a89099b729a19f8.jpg",
+        imga: "https://i.pinimg.com/736x/91/0f/1e/910f1e0d9615761e8a89099b729a19f8.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -28,7 +28,7 @@ const cartes = [
         id: 2,
         nom: "Pikachu",
         description: "Pokémon Rato. Nº 0025. Altura: 0,4 m. Peso: 6,0 kg. Quando está com raiva, descarrega imediatamente a energia armazenada nas bolsas em suas bochechas.",
-        img: "https://i.pinimg.com/736x/bb/b6/2c/bbb62c9903cfee2efd5a2749b9712945.jpg",
+        imga: "https://i.pinimg.com/736x/bb/b6/2c/bbb62c9903cfee2efd5a2749b9712945.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -51,7 +51,7 @@ const cartes = [
         id: 3,
         nom: "Charmeleon",
         description: "Flame Pokémon. NO. 0005. HT: 3'7\". WT: 41.9 lbs. If it becomes agitated during battle, it spouts intense flames, incinerating its surroundings.",
-        img: "https://i.pinimg.com/1200x/24/76/31/2476310fa7a64535e5f2cf0965297fae.jpg",
+        imga: "https://i.pinimg.com/1200x/24/76/31/2476310fa7a64535e5f2cf0965297fae.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -69,7 +69,7 @@ const cartes = [
         id: 4,
         nom: "Ptitard",
         description: "Pokémon Têtard. N° 0060. Taille : 0,6 m. Poids : 12,4 kg. Dans les rivières au courant puissant, il se ventouse pour s'accrocher aux rochers.",
-        img: "https://i.pinimg.com/736x/50/15/0d/50150de8347864270d8097c31cc167a0.jpg",
+        imga: "https://i.pinimg.com/736x/50/15/0d/50150de8347864270d8097c31cc167a0.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -87,7 +87,7 @@ const cartes = [
         id: 5,
         nom: "Clefairy",
         description: "Pokémon Fada. N° 0035. Altura: 0,6 m. Peso: 7,5 kg. É muito popular devido ao seu gritinho e comportamento adoráveis. No entanto, este Pokémon fofinho raramente é encontrado.",
-        img: "https://i.pinimg.com/736x/f0/d5/79/f0d5797c78924e5ea0a18e90a9a70037.jpg",
+        imga: "https://i.pinimg.com/736x/f0/d5/79/f0d5797c78924e5ea0a18e90a9a70037.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -110,7 +110,7 @@ const cartes = [
         id: 6,
         nom: "Mr. Mime",
         description: "Pokémon Barreira. Nº 0122. Altura: 1,3 m. Peso: 54,5 kg. Suas mãos talvez não sejam grandes por acaso: muitos cientistas acreditam que as palmas se alargaram para fazer mímica.",
-        img: "https://i.pinimg.com/736x/71/7d/e4/717de407470701df213a8565c2bbf41e.jpg",
+        imga: "https://i.pinimg.com/736x/71/7d/e4/717de407470701df213a8565c2bbf41e.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -133,7 +133,7 @@ const cartes = [
         id: 7,
         nom: "Mr. Mime",
         description: "Pokémon Barreira. Nº 0122. Altura: 1,3 m. Peso: 54,5 kg. Suas mãos talvez não sejam grandes por acaso: muitos cientistas acreditam que as palmas se alargaram para fazer mímica.",
-        img: "https://i.pinimg.com/1200x/71/7d/e4/717de407470701df213a8565c2bbf41e.jpg",
+        imga: "https://i.pinimg.com/1200x/71/7d/e4/717de407470701df213a8565c2bbf41e.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -156,7 +156,7 @@ const cartes = [
         id: 8,
         nom: "Vulpix",
         description: "Pokémon Raposa. Nº 0037. Altura: 0,6 m. Peso: 9,9 kg. Conforme vai crescendo, suas seis caudas centinhas tornam-se mais belas, com uma pelugem ainda mais luxuosa.",
-        img: "https://i.pinimg.com/736x/5a/d3/e1/5ad3e18494c96cf9ccbb3c04c94c67ed.jpg",
+        imga: "https://i.pinimg.com/736x/5a/d3/e1/5ad3e18494c96cf9ccbb3c04c94c67ed.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -174,7 +174,7 @@ const cartes = [
         id: 9,
         nom: "Cubone",
         description: "Pokémon Solitario. N° 0104. Altura: 0,4 m. Peso: 6,5 kg. Siempre lleva la calavera de su madre como casco, por lo que nadie ha visto nunca su verdadera cara.",
-        img: "https://i.pinimg.com/1200x/d7/97/d7/d797d7be832df0ca5f53789aa5b18b8c.jpg",
+        imga: "https://i.pinimg.com/1200x/d7/97/d7/d797d7be832df0ca5f53789aa5b18b8c.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -192,7 +192,7 @@ const cartes = [
         id: 10,
         nom: "Meowth",
         description: "Pokémon Arranha Gato. Nº 0052. Altura: 0,4 m. Peso: 4,2 kg. Ama coisas reluzentes. Quando vê um objeto brilhante, a moeda dourada na sua cabeça brilha também.",
-        img: "https://i.pinimg.com/736x/08/f0/a2/08f0a2f1198f1b7b7906ee31d582e3a2.jpg",
+        imga: "https://i.pinimg.com/736x/08/f0/a2/08f0a2f1198f1b7b7906ee31d582e3a2.jpg",
         categorie: "common",
         type: "monstres",
         favourite: false,
@@ -210,7 +210,7 @@ const cartes = [
         id: 11,
         nom: "Meowth V",
         description: "Carte Promo (SWSH004). Règle V : Lorsque votre Pokémon V est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : aky CG Works.",
-        img: "https://i.pinimg.com/1200x/b1/9e/6a/b19e6a61ea62e686cb04aa9a0e37934a.jpg",
+        imga: "https://i.pinimg.com/1200x/b1/9e/6a/b19e6a61ea62e686cb04aa9a0e37934a.jpg",
         categorie: "rare",
         type: "monstres",
         favourite: false,
@@ -233,7 +233,7 @@ const cartes = [
         id: 12,
         nom: "Exeggutor ex",
         description: "Carte Pokémon ex (Stage 1, évolue d'Exeggcute). Règle ex : Lorsque votre Pokémon ex est mis K.O., votre adversaire gagne 2 points. Illustrateur : PLANETA CG Works.",
-        img: "https://i.pinimg.com/736x/1a/ee/d7/1aeed7115d6b0693645549e97ff08141.jpg",
+        imga: "https://i.pinimg.com/736x/1a/ee/d7/1aeed7115d6b0693645549e97ff08141.jpg",
         categorie: "rare",
         type: "monstres",
         favourite: false,
@@ -251,7 +251,7 @@ const cartes = [
         id: 13,
         nom: "Umbreon V",
         description: "Carte Pokémon V (Single Strike). Règle V : Lorsque votre Pokémon V est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : Skan Graphics.",
-        img: "https://i.pinimg.com/736x/ee/9f/1e/ee9f1e5e3d28785cc6dde514ee049ff4.jpg",
+        imga: "https://i.pinimg.com/736x/ee/9f/1e/ee9f1e5e3d28785cc6dde514ee049ff4.jpg",
         categorie: "rare",
         type: "monstres",
         favourite: false,
@@ -274,7 +274,7 @@ const cartes = [
         id: 14,
         nom: "Jolteon V",
         description: "Carte Promo (SWSH151). Règle V : Lorsque votre Pokémon V est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : Skan Graphics.",
-        img: "https://i.pinimg.com/736x/89/68/ee/8968eeab92d36c30e36f55f3a71db514.jpg",
+        imga: "https://i.pinimg.com/736x/89/68/ee/8968eeab92d36c30e36f55f3a71db514.jpg",
         categorie: "rare",
         type: "monstres",
         favourite: false,
@@ -297,7 +297,7 @@ const cartes = [
         id: 15,
         nom: "Leafeon V",
         description: "Carte Pokémon V (Evolving Skies, 166/203). Règle V : Lorsque votre Pokémon V est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : Skan Graphics.",
-        img: "https://i.pinimg.com/736x/dc/f8/34/dcf834e1fe2a8e13e3c52a859e3a9bc8.jpg",
+        imga: "https://i.pinimg.com/736x/dc/f8/34/dcf834e1fe2a8e13e3c52a859e3a9bc8.jpg",
         categorie: "rare",
         type: "monstres",
         favourite: false,
@@ -315,7 +315,7 @@ const cartes = [
         id: 16,
         nom: "Corviknight V",
         description: "Carte Pokémon V (Evolving Skies, 156/163). Règle V : Lorsque votre Pokémon V est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : PLANETA Mochizuki.",
-        img: "https://i.pinimg.com/1200x/ef/ef/4e/efef4ecb26d5d711f2cf2984b8440ca8.jpg",
+        imga: "https://i.pinimg.com/1200x/ef/ef/4e/efef4ecb26d5d711f2cf2984b8440ca8.jpg",
         categorie: "rare",
         type: "hero",
         favourite: false,
@@ -338,7 +338,7 @@ const cartes = [
         id: 17,
         nom: "Mewtwo ex",
         description: "Carte Pokémon ex (Basic, illustration gold/rainbow). Règle ex : Lorsque votre Pokémon ex est mis K.O., votre adversaire gagne 2 points. Illustrateur : 5ban Graphics.",
-        img: "https://i.pinimg.com/736x/62/a7/61/62a761cc6dfa5eef83d7b0b654076c7c.jpg",
+        imga: "https://i.pinimg.com/736x/62/a7/61/62a761cc6dfa5eef83d7b0b654076c7c.jpg",
         categorie: "rare",
         type: "hero",
         favourite: false,
@@ -349,13 +349,11 @@ const cartes = [
                 nom: "Psychic Sphere",
                 cout: ["psychic", "colorless"],
                 degats: 50,
-                effet: ""
             },
             {
                 nom: "Psydrive",
                 cout: ["psychic", "psychic", "colorless", "colorless"],
                 degats: 150,
-                effet: "Défaussez 2 Énergies Psychic de ce Pokémon."
             }
         ]
     },
@@ -363,7 +361,7 @@ const cartes = [
         id: 18,
         nom: "Charizard ex",
         description: "Carte Pokémon ex (Stage 2, évolue de Charmeleon). Règle ex : Lorsque votre Pokémon ex est mis K.O., votre adversaire gagne 2 points. Illustrateur : PLANETA Igarashi.",
-        img: "https://i.pinimg.com/736x/e3/13/12/e3131266ff9afa0af8c387947f23aa53.jpg",
+        imga: "https://i.pinimg.com/736x/e3/13/12/e3131266ff9afa0af8c387947f23aa53.jpg",
         categorie: "rare",
         type: "hero",
         favourite: false,
@@ -386,7 +384,7 @@ const cartes = [
         id: 19,
         nom: "Gengar ex",
         description: "Carte Pokémon ex (Stage 2, évolue de Haunter). Règle ex : Lorsque votre Pokémon ex est mis K.O., votre adversaire gagne 2 points. Illustrateur : PLANETA CG Works.",
-        img: "https://i.pinimg.com/736x/3f/c0/5c/3fc05c68716e22b6b32a9d8da22d3cf6.jpg",
+        imga: "https://i.pinimg.com/736x/3f/c0/5c/3fc05c68716e22b6b32a9d8da22d3cf6.jpg",
         categorie: "rare",
         type: "hero",
         favourite: false,
@@ -404,7 +402,7 @@ const cartes = [
         id: 20,
         nom: "Mimikyu ex",
         description: "Carte Pokémon ex (Basic, 069/159). Règle ex : Lorsque votre Pokémon ex est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : PLANETA Igarashi.",
-        img: "https://i.pinimg.com/736x/d0/54/12/d05412f113bb7adccd95ed420eb52f42.jpg",
+        imga: "https://i.pinimg.com/736x/d0/54/12/d05412f113bb7adccd95ed420eb52f42.jpg",
         categorie: "rare",
         type: "hero",
         favourite: false,
@@ -427,7 +425,7 @@ const cartes = [
         id: 21,
         nom: "Gengar ex",
         description: "Carte Pokémon ex (Stage 2, évolue de Haunter, 01/354). Règle ex : Lorsque votre Pokémon ex est mis K.O., votre adversaire prend 2 cartes Récompense.",
-        img: "https://i.pinimg.com/736x/56/ff/da/56ffdad36604984860c4a2c95885c745.jpg",
+        imga: "https://i.pinimg.com/736x/56/ff/da/56ffdad36604984860c4a2c95885c745.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -450,7 +448,7 @@ const cartes = [
         id: 22,
         nom: "Mega Charizard X ex",
         description: "Carte Pokémon ex (Stage 2, évolue de Charmeleon, 125/094). Méga-Évolution de Charizard. Règle Méga Évolution ex : Lorsque votre Pokémon Méga Évolution ex est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : danciao.",
-        img: "https://i.pinimg.com/736x/35/1f/c5/351fc51d72cd1b4528c95125d1b90ea1.jpg",
+        imga: "https://i.pinimg.com/736x/35/1f/c5/351fc51d72cd1b4528c95125d1b90ea1.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -468,7 +466,7 @@ const cartes = [
         id: 23,
         nom: "Charizard ex",
         description: "Carte Pokémon ex Tera (Stage 2, évolue de Charmeleon, 234/091). Tera : tant que ce Pokémon est sur votre Banc, prévenez tous les dégâts qui lui sont infligés par les attaques (les vôtres comme celles de votre adversaire). Règle ex : Lorsque votre Pokémon ex est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : AKIRA EGAWA.",
-        img: "https://i.pinimg.com/736x/8e/33/64/8e33649ad42dd8ad2774a5d324de9310.jpg",
+        imga: "https://i.pinimg.com/736x/8e/33/64/8e33649ad42dd8ad2774a5d324de9310.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -486,7 +484,7 @@ const cartes = [
         id: 24,
         nom: "Mega Dragonite ex",
         description: "Carte Pokémon ex (Stage 2, évolue de Dragonair, 231/217). Méga-Évolution de Dragonite. Règle Méga Évolution ex : Lorsque votre Pokémon Méga Évolution ex est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : DOM.",
-        img: "https://i.pinimg.com/736x/87/2f/78/872f78eab5cc319022cbd2f61a03323e.jpg",
+        imga: "https://i.pinimg.com/736x/87/2f/78/872f78eab5cc319022cbd2f61a03323e.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -504,7 +502,7 @@ const cartes = [
         id: 25,
         nom: "Mega Froslass ex",
         description: "Carte Pokémon ex (Stage 1, évolue de Snorunt, 265/217). Méga-Évolution de Froslass. Règle Méga Évolution ex : Lorsque votre Pokémon Méga Évolution ex est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : Saboteri.",
-        img: "https://i.pinimg.com/736x/e0/9e/db/e09edb56a3e5801e54cb95250f136ca0.jpg",
+        imga: "https://i.pinimg.com/736x/e0/9e/db/e09edb56a3e5801e54cb95250f136ca0.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -527,7 +525,7 @@ const cartes = [
         id: 26,
         nom: "Tyranitar ex",
         description: "Carte Pokémon ex Téracristal (Niveau 2, évolution de Ymphect, 211/197). Téracristal : tant que ce Pokémon est sur votre Banc, évitez tous les dégâts infligés à ce Pokémon par des attaques (les vôtres et celles de votre adversaire). Règle ex : Lorsque votre Pokémon ex est mis K.O., l'adversaire récupère 2 cartes Récompense. Illustrateur : 5ban Graphics.",
-        img: "https://i.pinimg.com/736x/3f/cf/37/3fcf376e1e016c8dee1c8d3dfbcb2465.jpg",
+        imga: "https://i.pinimg.com/736x/3f/cf/37/3fcf376e1e016c8dee1c8d3dfbcb2465.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -550,7 +548,7 @@ const cartes = [
         id: 27,
         nom: "Charizard ex",
         description: "Carte Pokémon ex Tera (Stage 2, évolue de Charmeleon, 215/197). Tera : tant que ce Pokémon est sur votre Banc, prévenez tous les dégâts qui lui sont infligés par les attaques (les vôtres comme celles de votre adversaire). Règle ex : Lorsque votre Pokémon ex est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : 5ban Graphics.",
-        img: "https://i.pinimg.com/736x/9d/36/ce/9d36ce48391730e3a277a94650c31c05.jpg",
+        imga: "https://i.pinimg.com/736x/9d/36/ce/9d36ce48391730e3a277a94650c31c05.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -568,7 +566,7 @@ const cartes = [
         id: 28,
         nom: "Mega Lucario ex",
         description: "Carte Pokémon ex (1 évolution, évolue de Riolu, 228/193). Méga-Évolution de Lucario. Règle Méga Évolution ex : Lorsque votre Pokémon Méga Évolution ex est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : 5ban Graphics.",
-        img: "https://i.pinimg.com/736x/36/4d/f2/364df26e79aa7b0ad1baef58f4826007.jpg",
+        imga: "https://i.pinimg.com/736x/36/4d/f2/364df26e79aa7b0ad1baef58f4826007.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -591,7 +589,7 @@ const cartes = [
         id: 29,
         nom: "Mega Pyroar ex",
         description: "Carte Pokémon ex japonaise (1 évolution, évolue de Litleo, 015/083 RR). Méga-Évolution de Pyroar. Règle Méga Évolution ex : Lorsque votre Pokémon Méga Évolution ex est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : Keisuke Azuma.",
-        img: "https://i.pinimg.com/1200x/0f/2e/b0/0f2eb053223b5a09a4acc13a86951ec2.jpg",
+        imga: "https://i.pinimg.com/1200x/0f/2e/b0/0f2eb053223b5a09a4acc13a86951ec2.jpg",
         categorie: "epic",
         type: "hero",
         favourite: false,
@@ -614,7 +612,7 @@ const cartes = [
         id: 30,
         nom: "Blastoise VMAX",
         description: "Carte Pokémon VMAX (évolue de Blastoise V, forme Gigantamax). Règle VMAX : Lorsque votre Pokémon VMAX est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : rushfortacos.",
-        img: "https://i.pinimg.com/736x/cc/65/fd/cc65fda42c67421efa9f66956a60b2fd.jpg",
+        imga: "https://i.pinimg.com/736x/cc/65/fd/cc65fda42c67421efa9f66956a60b2fd.jpg",
         categorie: "epic",
         type: "serviteur",
         favourite: false,
@@ -632,7 +630,7 @@ const cartes = [
         id: 31,
         nom: "Dark Charizard VMAX",
         description: "Carte Pokémon VMAX (custom / fan-made, évolue de Charizard, forme Gigantamax). Règle VMAX : Lorsque votre Pokémon VMAX est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : Amogh the great.",
-        img: "https://i.pinimg.com/1200x/2e/c9/28/2ec92880a9cfca5d4343e023ce3f3ec7.jpg",
+        imga: "https://i.pinimg.com/1200x/2e/c9/28/2ec92880a9cfca5d4343e023ce3f3ec7.jpg",
         categorie: "legend",
         type: "serviteur",
         favourite: false,
@@ -649,7 +647,6 @@ const cartes = [
                 nom: "Soul",
                 cout: ["fire", "darkness"],
                 degats: 250,
-                effet: "L'âme du Pokémon est piégée."
             }
         ],
     },
@@ -657,7 +654,7 @@ const cartes = [
         id: 32,
         nom: "Mewtwo VMAX",
         description: "Carte Pokémon VMAX (custom / fan-made, évolue de MEW, forme Gigantamax). Règle VMAX : Lorsque votre Pokémon VMAX est mis K.O., votre adversaire prend 3 cartes Récompense.",
-        img: "https://i.pinimg.com/1200x/17/8c/c7/178cc79e5e2da9ebe4d84989f274aa4e.jpg",
+        imga: "https://i.pinimg.com/1200x/17/8c/c7/178cc79e5e2da9ebe4d84989f274aa4e.jpg",
         categorie: "legend",
         type: "serviteur",
         favourite: false,
@@ -680,7 +677,7 @@ const cartes = [
         id: 33,
         nom: "Primal Groudon EX",
         description: "Carte Pokémon EX (custom / fake, évolue de Primal Groudon, 159/300). Règle EX : Lorsque votre Pokémon EX est mis K.O., votre adversaire prend 2 cartes Récompense. Règle Méga Évolution : lorsqu'un de vos Pokémon devient un Pokémon Méga Évolution, votre tour se termine. Illustrateur : ???.",
-        img: "https://i.pinimg.com/736x/d1/be/80/d1be8073b5b1fc0a336be919ac292b3e.jpg",
+        imga: "https://i.pinimg.com/736x/d1/be/80/d1be8073b5b1fc0a336be919ac292b3e.jpg",
         categorie: "legend",
         type: "serviteur",
         favourite: false,
@@ -703,7 +700,7 @@ const cartes = [
         id: 35,
         nom: "M Gyarados VMAX",
         description: "Carte Pokémon VMAX (custom / fan-made, évolue de Gyarados, forme Gigantamax). Règle VMAX : Lorsque votre Pokémon VMAX est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : aschefield.",
-        img: "https://i.pinimg.com/736x/7e/d1/03/7ed1038bd2a1676f26ccd8b23c9736b4.jpg",
+        imga: "https://i.pinimg.com/736x/7e/d1/03/7ed1038bd2a1676f26ccd8b23c9736b4.jpg",
         categorie: "legend",
         type: "serviteur",
         favourite: false,
@@ -726,7 +723,7 @@ const cartes = [
         id: 36,
         nom: "Reshiram V",
         description: "Carte Pokémon V (custom / fan-made, 09/2005). Règle V : Lorsque votre Pokémon V est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : Quentin Boichut.",
-        img: "https://i.pinimg.com/1200x/66/40/38/664038a4cbfafec9e6c5e6be301a6498.jpg",
+        imga: "https://i.pinimg.com/1200x/66/40/38/664038a4cbfafec9e6c5e6be301a6498.jpg",
         categorie: "legend",
         type: "serviteur",
         favourite: false,
@@ -754,7 +751,7 @@ const cartes = [
         id: 37,
         nom: "Xerneas GX",
         description: "Carte Pokémon GX (custom / fan-made, 09/2005). Règle GX : Lorsque votre Pokémon GX est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : Quentin BOICHUT.",
-        img: "https://i.pinimg.com/1200x/f7/7f/8c/f77f8c790aa5b168eb1a57f28e63c4e8.jpg",
+        imga: "https://i.pinimg.com/1200x/f7/7f/8c/f77f8c790aa5b168eb1a57f28e63c4e8.jpg",
         categorie: "legend",
         type: "serviteur",
         favourite: false,
@@ -778,7 +775,7 @@ const cartes = [
         id: 38,
         nom: "Rayquaza Shiny VMAX",
         description: "Carte Pokémon VMAX (custom / fan-made, 001/100, forme Dynamax). Règle VMAX : Lorsque votre Pokémon VMAX est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : Your Name.",
-        img: "https://i.pinimg.com/736x/2b/84/92/2b8492929878c8283693556e3d9b668c.jpg",
+        imga: "https://i.pinimg.com/736x/2b/84/92/2b8492929878c8283693556e3d9b668c.jpg",
         categorie: "legend",
         type: "sort",
         favourite: false,
@@ -801,7 +798,7 @@ const cartes = [
         id: 39,
         nom: "Corruption, God of Destruction VMAX",
         description: "Carte Pokémon VMAX (custom / fan-made, « Fractal 2.0 », forme Gigantamax). Règle VMAX : Lorsque votre Pokémon VMAX est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : aschefield.",
-        img: "https://i.pinimg.com/1200x/65/4f/65/654f6580e9a8244114c7cfcb591ba55e.jpg",
+        imga: "https://i.pinimg.com/1200x/65/4f/65/654f6580e9a8244114c7cfcb591ba55e.jpg",
         categorie: "legend",
         type: "sort",
         favourite: false,
@@ -819,7 +816,7 @@ const cartes = [
         id: 40,
         nom: "Solgaleo V",
         description: "Carte Pokémon V (custom / fan-made). Règle V : Lorsque votre Pokémon V est mis K.O., votre adversaire prend 2 cartes Récompense. Illustrateur : aschefield.",
-        img: "https://i.pinimg.com/736x/60/5e/02/605e02a79af04313b45898bade496cc5.jpg",
+        imga: "https://i.pinimg.com/736x/60/5e/02/605e02a79af04313b45898bade496cc5.jpg",
         categorie: "legend",
         type: "sort",
         favourite: false,
@@ -921,7 +918,13 @@ const packes = document.querySelector("#boosters");
 const achat = document.querySelectorAll("achat");
 const button = document.getElementById("valider-btn");
 const mypacks = document.querySelector("#myboosters");
+const cart_list = document.querySelector("#cart-list");
+const cart_details = document.querySelector("#cart-details");
+const cart_collection = document.querySelector("#my_cart");
 // const affichage_cart = document.querySelector("#affichage_cart");
+console.log(cart_list)
+console.log(document.querySelector("#cart-details"));
+
 
 length_panier.textContent = Panier_achat.length;
 
@@ -1008,6 +1011,119 @@ function ajouterProduit(index) {
     let total = total_prix()
     totalSpan.textContent = total;
     length_panier.textContent = Panier_achat.length;
+}
+
+// function de affichage :
+function affichecart() {
+    console.log(mycartes)
+    if (mycartes.length !== 0) {
+        cart_list.textContent = "";
+        for (let i = 0; i < mycartes.length; i++) {
+            const my_cart = document.createElement('div');
+            my_cart.id = "my_cart";
+            my_cart.className = "my_cart";
+            const cart_img = document.createElement('img');
+            cart_img.src = cartes[mycartes[i]].imga;
+            cart_img.alt = cartes[mycartes[i]].nom + " : " + cartes[mycartes[i]].description;
+            cart_img.className = "cart_game";
+            cart_img.dataset.name = `${mycartes[i]}`;
+            my_cart.appendChild(cart_img);
+            cart_list.appendChild(my_cart);
+        }
+    }
+}
+
+// function affichecart() {
+//     console.log("mycartes =", mycartes);
+//     console.log("cartes =", cartes);
+
+//     for (let i = 0; i < mycartes.length; i++) {
+//         console.log("Loop index:", i);
+//         console.log("Value:", mycartes[i]);
+//         console.log("Card found:", cartes[mycartes[i]]);
+
+//         if (cartes[mycartes[i]] === undefined) {
+//             console.error("PROBLEM: No card found for:", mycartes[i]);
+//             continue;
+//         }
+
+//         console.log("Image:", cartes[mycartes[i]].imga);
+//     }
+// }
+
+// function de filtrage avec type :
+function affichecarteByType(type) {
+    if (mycartes.length !== 0) {
+        cart_list.textContent = "";
+        for (let i = 0; i < mycartes.length; i++) {
+            console.log(type)
+            console.log(cartes[mycartes[i]].type === type)
+            if (cartes[mycartes[i]].type === type) {
+                console.log(i);
+                const my_cart = document.createElement('div');
+                my_cart.id = "my_cart";
+                my_cart.className = "my_cart";
+                const cart_img = document.createElement('img');
+                cart_img.src = cartes[mycartes[i]].imga;
+                cart_img.alt = cartes[mycartes[i]].nom + " : " + cartes[mycartes[i]].description;
+                cart_img.className = "cart_game";
+                cart_img.dataset.name = `${mycartes[i]}`;
+                my_cart.appendChild(cart_img);
+                cart_list.appendChild(my_cart);
+            }
+        }
+    }
+}
+
+// function de filtrage avec category :
+function affichecarteBycategory (category) {
+    if (mycartes.length !== 0) {
+        cart_list.textContent = "";
+        for (let i = 0; i < mycartes.length; i++) {
+            if (cartes[mycartes[i]].categorie === category) {
+                console.log(i);
+                const my_cart = document.createElement('div');
+                my_cart.id = "my_cart";
+                my_cart.className = "my_cart";
+                const cart_img = document.createElement('img');
+                cart_img.src = cartes[mycartes[i]].imga;
+                cart_img.alt = cartes[mycartes[i]].nom + " : " + cartes[mycartes[i]].description;
+                cart_img.className = "cart_game";
+                cart_img.dataset.name = `${mycartes[i]}`;
+                my_cart.appendChild(cart_img);
+                cart_list.appendChild(my_cart);
+            }
+        }
+    }
+}
+
+// click en img pour afficher les images :
+function imgclick() {
+    const cart_collections = document.querySelectorAll("#my_cart");
+    Array.from(cart_collections).forEach(cart_collection => {
+        cart_collection.addEventListener('click', (e) => {
+            console.log(e.target.classList.contains('cart_game'));
+            if (e.target.classList.contains('cart_game')) {
+                cart_details.textContent = "";
+                let myid = e.target.dataset.name;
+                myid = Number(myid);
+                const div = document.createElement('div');
+                div.id = "carte_details";
+                div.className = "carte_details";
+                const h3 = document.createElement('h3');
+                h3.textContent = cartes[myid - 1].nom;
+                const desc = document.createElement('p');
+                desc.textContent = cartes[myid - 1].description;
+                const p = document.createElement('p');
+                p.textContent = cartes[myid - 1].type;
+
+                div.appendChild(h3);
+                div.appendChild(desc);
+                div.appendChild(p);
+                cart_details.appendChild(div);
+            }
+        })
+    })
 }
 
 // dom de page home :
@@ -1145,7 +1261,7 @@ if (window.location.pathname === '/votreboosters.html') {
             }
 
             // local storage :
-            for (let element of local_cart){
+            for (let element of local_cart) {
                 mycartes.push(element)
             }
             localStorage.setItem('mycartes', JSON.stringify(mycartes));
@@ -1154,7 +1270,7 @@ if (window.location.pathname === '/votreboosters.html') {
             let key = myboosters.indexOf(index);
             myboosters.splice(key, 1);
             localStorage.setItem('myboosters', JSON.stringify(myboosters));
-            
+
             // creer model pour voir les cart  :
             /// div parent : model .
             const modal = document.createElement('div');
@@ -1180,7 +1296,7 @@ if (window.location.pathname === '/votreboosters.html') {
                 carte.className = "modal";
                 carte.id = "modal";
                 const img_cart = document.createElement('img');
-                img_cart.src = cartes[local_cart[i] - 1].img;
+                img_cart.src = cartes[local_cart[i] - 1].imga;
                 img_cart.alt = cartes[local_cart[i] - 1].nom + " : " + cartes[local_cart[i] - 1].description;
                 const h3 = document.createElement('h3');
                 h3.textContent = cartes[local_cart[i] - 1].nom;
@@ -1227,4 +1343,99 @@ if (window.location.pathname === '/votreboosters.html') {
             li.remove();
         }
     })
+}
+
+
+if (window.location.pathname === '/macollection.html') {
+    affichecart();
+    imgclick();
+
+    const tout = document.querySelector(".tout");
+    tout.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        affichecart();
+        imgclick()
+    })
+
+    const hero_type = document.querySelector(".hero_type");
+    hero_type.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        let type_name = e.target.name;
+
+        affichecarteByType(type_name);
+        imgclick()
+    })
+
+    const monstres_type = document.querySelector(".monstres_type");
+    monstres_type.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        let type_name = e.target.name;
+
+        affichecarteByType(type_name);
+        imgclick()
+    })
+
+    const serviteurs_type = document.querySelector(".serviteurs_type");
+    serviteurs_type.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        let type_name = e.target.name;
+
+        affichecarteByType(type_name);
+        imgclick()
+    })
+
+    const sorts_type = document.querySelector(".sorts_type");
+    sorts_type.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        let type_name = e.target.name;
+
+        affichecarteByType(type_name);
+        imgclick()
+    })
+
+    const common_categorie = document.querySelector(".common_categorie");
+    common_categorie.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        let category = e.target.name;
+
+        affichecarteBycategory(category);
+        imgclick()
+    })
+
+    const rare_categorie = document.querySelector(".rare_categorie");
+    rare_categorie.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        let category = e.target.name;
+
+        affichecarteBycategory(category);
+        imgclick()
+    })
+
+    const epic_categorie = document.querySelector(".epic_categorie");
+    epic_categorie.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        let category = e.target.name;
+
+        affichecarteBycategory(category);
+        imgclick()
+    })
+
+    const legend_categorie = document.querySelector(".legend_categorie");
+    legend_categorie.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        cart_details.textContent = "";
+        let category = e.target.name;
+
+        affichecarteBycategory(category);
+        imgclick()
+    })
+
 }

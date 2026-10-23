@@ -282,7 +282,7 @@ header {
 
 .panier {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 30% 30% 30%;
     padding: 10px 30px;
     gap: 20px;
 }
@@ -307,3 +307,17 @@ header {
     width: 200%;
 } */
 
+/* page mon cart  */
+
+.boook{
+    display: flex;
+}
+
+.btn-filtre{
+    display: flex;
+    flex-direction: column;
+}
+
+.book-cart {
+    display: flex;
+}
