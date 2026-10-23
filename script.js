@@ -886,7 +886,7 @@ const Panier_achat = [];
 
 
 // verifier de local storage :
-if (localStorage.getItem("Panier_achat") !== null && localStorage.getItem("myboosters") !== null) {
+if (localStorage.getItem("Panier_achat") !== null && localStorage.getItem("myboosters") !== null && localStorage.getItem("mycartes") !== null) {
     // get donnes de panier au local :
     let consol = localStorage.getItem(`Panier_achat`)
     consol = JSON.parse(consol)
@@ -899,9 +899,15 @@ if (localStorage.getItem("Panier_achat") !== null && localStorage.getItem("myboo
         myboosters.push(stoke)
     }
     myboosters.sort((a, b) => a - b);
+    let stokages = localStorage.getItem(`mycartes`)
+    stokages = JSON.parse(stokages)
+    for (let stokage of stokages) {
+        mycartes.push(stokage)
+    }
 } else {
     localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
     localStorage.setItem('myboosters', JSON.stringify(myboosters));
+    localStorage.setItem('mycartes', JSON.stringify(mycartes));
 }
 
 
@@ -966,8 +972,7 @@ function affichemyboosters() {
             btn.textContent = "Open votre Booster";
             btn.className = "open";
             btn.id = "open";
-            btn.name = "open";
-
+            btn.name = `${myboosters[i]}`;
             div_img.appendChild(pack);
             div.appendChild(div_img);
             div.appendChild(nom);
@@ -1106,6 +1111,7 @@ if (window.location.pathname === '/panier.html') {
             }
             Panier_achat.length = 0;
             localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
+            myboosters.sort((a, b) => a - b);
             localStorage.setItem('myboosters', JSON.stringify(myboosters));
             panier.remove();
             button.remove();
@@ -1134,43 +1140,54 @@ if (window.location.pathname === '/votreboosters.html') {
         if (e.target.classList.contains('open')) {
             let local_cart = [];
             for (let i = 1; i <= 5; i++) {
-                let number = Math.floor(Math.random() * 40);
+                let number = Math.floor(Math.random() * cartes.length);
                 local_cart.push(cartes[number].id);
             }
-            console.log(local_cart);
 
             // local storage :
-            // ... 
-
+            for (let element of local_cart){
+                mycartes.push(element)
+            }
+            localStorage.setItem('mycartes', JSON.stringify(mycartes));
+            let index = e.target.name;
+            index = Number(index);
+            let key = myboosters.indexOf(index);
+            myboosters.splice(key, 1);
+            localStorage.setItem('myboosters', JSON.stringify(myboosters));
+            
             // creer model pour voir les cart  :
+            /// div parent : model .
             const modal = document.createElement('div');
             modal.id = "modal";
             modal.className = "modal";
+            /// div contenant .
             const modal_content = document.createElement('div');
             modal_content.id = "modal-content";
             modal_content.className = "modal-content";
+            /// span * 
             const span = document.createElement('span');
             span.textContent = "&times;";
             span.className = "close";
             span.id = "close";
+            /// contenant de div
             const titre_modal = document.createElement('h2');
             const model_cart = document.createElement('div');
-            modal.id = "model_cart";
-            modal.className = "model_cart";
+            model_cart.id = "model_cart";
+            model_cart.className = "model_cart";
             for (let i = 0; i < local_cart.length; i++) {
                 console.log(i);
                 let carte = document.createElement('div');
                 carte.className = "modal";
                 carte.id = "modal";
-                // const img_cart = document.createElement('img');
-                // img_cart.src = cartes[local_cart[i] - 1].img;
-                // img_cart.alt = cartes[local_cart[i] - 1].nom + " : " + cartes[local_cart[i] - 1].description;
+                const img_cart = document.createElement('img');
+                img_cart.src = cartes[local_cart[i] - 1].img;
+                img_cart.alt = cartes[local_cart[i] - 1].nom + " : " + cartes[local_cart[i] - 1].description;
                 const h3 = document.createElement('h3');
                 h3.textContent = cartes[local_cart[i] - 1].nom;
                 const p = document.createElement('p');
                 p.textContent = cartes[local_cart[i] - 1].categorie;
 
-                // carte.appendChild(img_cart);
+                carte.appendChild(img_cart);
                 carte.appendChild(h3);
                 carte.appendChild(p);
                 model_cart.appendChild(carte);
@@ -1189,8 +1206,9 @@ if (window.location.pathname === '/votreboosters.html') {
 
             setTimeout(function () {
                 const yassine = document.getElementById('modal')
-                yassine.style.display = 'none';
-            }, 2000);
+                // yassine.style.display = 'none';
+                yassine.remove();
+            }, 5000);
 
             // // Get the modal
             // const modal_page = document.getElementById("modal");
