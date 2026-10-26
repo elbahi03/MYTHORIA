@@ -1033,23 +1033,21 @@ function affichecart() {
     }
 }
 
-// function affichecart() {
-//     console.log("mycartes =", mycartes);
-//     console.log("cartes =", cartes);
+// virifier le point de de data cart :
+function affiche() {
+    console.log("mycartes =", cartes);
+    console.log("cartes =", cartes);
 
-//     for (let i = 0; i < mycartes.length; i++) {
-//         console.log("Loop index:", i);
-//         console.log("Value:", mycartes[i]);
-//         console.log("Card found:", cartes[mycartes[i]]);
+    for (let i = 0; i < cartes.length; i++) {
+        console.log("Loop index:", i+1);
+        console.log("Value:", cartes[i]);
 
-//         if (cartes[mycartes[i]] === undefined) {
-//             console.error("PROBLEM: No card found for:", mycartes[i]);
-//             continue;
-//         }
-
-//         console.log("Image:", cartes[mycartes[i]].imga);
-//     }
-// }
+        if (cartes[i] === undefined) {
+            console.error("PROBLEM: No card found for:", cartes[i]);
+        }
+    }
+}
+affiche()
 
 // function de filtrage avec type :
 function affichecarteByType(type) {
