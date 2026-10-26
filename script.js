@@ -1005,6 +1005,9 @@ function affichemyboosters() {
             const pack = document.createElement("img");
             pack.src = boosters[myboosters[i] - 1].icon;
             pack.alt = boosters[myboosters[i] - 1].nom + " : " + boosters[myboosters[i] - 1].description;
+            pack.style.width = "250px";
+            pack.style.height = "auto";
+            pack.style.objectFit = "cover";
             const nom = document.createElement("h3");
             nom.textContent = boosters[myboosters[i] - 1].nom;
             const btn = document.createElement("button");
@@ -1061,6 +1064,9 @@ function affichecart() {
             const cart_img = document.createElement('img');
             cart_img.src = cartes[mycartes[i] - 1].imga;
             cart_img.alt = cartes[mycartes[i] - 1].nom + " : " + cartes[mycartes[i] - 1].description;
+            cart_img.style.width = "250px";
+            cart_img.style.height = "auto";
+            cart_img.style.objectFit = "cover";
             cart_img.className = "cart_game";
             cart_img.dataset.name = `${mycartes[i]}`;
             my_cart.appendChild(cart_img);
@@ -1100,6 +1106,9 @@ function affichecarteByType(type) {
                 const cart_img = document.createElement('img');
                 cart_img.src = cartes[mycartes[i] - 1].imga;
                 cart_img.alt = cartes[mycartes[i] - 1].nom + " : " + cartes[mycartes[i] - 1].description;
+                cart_img.style.width = "250px";
+                cart_img.style.height = "auto";
+                cart_img.style.objectFit = "cover";
                 cart_img.className = "cart_game";
                 cart_img.dataset.name = `${mycartes[i]}`;
                 my_cart.appendChild(cart_img);
@@ -1122,6 +1131,9 @@ function affichecarteBycategory(category) {
                 const cart_img = document.createElement('img');
                 cart_img.src = cartes[mycartes[i] - 1].imga;
                 cart_img.alt = cartes[mycartes[i] - 1].nom + " : " + cartes[mycartes[i] - 1].description;
+                cart_img.style.width = "250px";
+                cart_img.style.height = "auto";
+                cart_img.style.objectFit = "cover";
                 cart_img.className = "cart_game";
                 cart_img.dataset.name = `${mycartes[i] - 1}`;
                 my_cart.appendChild(cart_img);
@@ -1192,6 +1204,9 @@ function add_deck() {
                         const img = document.createElement('img');
                         img.src = cartes[myid - 1].imga;
                         img.alt = cartes[myid - 1].nom + " : " + cartes[myid - 1].description;
+                        img.style.width = "250px";
+                        img.style.height = "auto";
+                        img.style.objectFit = "cover";
                         const btn = document.createElement('button');
                         btn.textContent = "annuler";
                         btn.className = "annuler";
@@ -1221,6 +1236,9 @@ function affiche_deck() {
             const img = document.createElement('img');
             img.src = cartes[mydeck[i] - 1].imga;
             img.alt = cartes[mydeck[i] - 1].nom + " : " + cartes[mydeck[i] - 1].description;
+            img.style.width = "250px";
+            img.style.height = "auto";
+            img.style.objectFit = "cover";
             const btn = document.createElement('button');
             btn.textContent = "annuler";
             btn.className = "annuler";
@@ -1248,7 +1266,7 @@ function annuler_deck() {
             localStorage.setItem('mydeck', JSON.stringify(mydeck));
             console.log("virifier");
             console.log(e.target.parentNode);
-            
+
 
             // part de affichage :
             let annuler_cart = e.target.parentNode;
