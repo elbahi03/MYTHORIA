@@ -697,6 +697,29 @@ const cartes = [
         ],
     },
     {
+        id: 34,
+        nom: "Primal Groudon EX",
+        description: "Carte Pokémon EX (custom / fake, évolue de Primal Groudon, 159/300). Règle EX : Lorsque votre Pokémon EX est mis K.O., votre adversaire prend 2 cartes Récompense. Règle Méga Évolution : lorsqu'un de vos Pokémon devient un Pokémon Méga Évolution, votre tour se termine. Illustrateur : ???.",
+        imga: "https://i.pinimg.com/736x/d1/be/80/d1be8073b5b1fc0a336be919ac292b3e.jpg",
+        categorie: "legend",
+        type: "serviteur",
+        favourite: false,
+        pv: 750,
+        element: "fighting",
+        attaques: [
+            {
+                nom: "Continental Quake",
+                cout: ["fighting"],
+                degats: 450,
+            },
+            {
+                nom: "Volcanic Explosion",
+                cout: ["fire"],
+                degats: 320,
+            }
+        ],
+    },
+    {
         id: 35,
         nom: "M Gyarados VMAX",
         description: "Carte Pokémon VMAX (custom / fan-made, évolue de Gyarados, forme Gigantamax). Règle VMAX : Lorsque votre Pokémon VMAX est mis K.O., votre adversaire prend 3 cartes Récompense. Illustrateur : aschefield.",
@@ -881,9 +904,14 @@ const boosters = [
 
 const Panier_achat = [];
 
+// my deck :
+
+const mydeck = [];
+
+
 
 // verifier de local storage :
-if (localStorage.getItem("Panier_achat") !== null && localStorage.getItem("myboosters") !== null && localStorage.getItem("mycartes") !== null) {
+if (localStorage.getItem("Panier_achat") !== null && localStorage.getItem("myboosters") !== null && localStorage.getItem("mycartes") !== null && localStorage.getItem("mydeck") !== null && localStorage.getItem("mydeck") !== null) {
     // get donnes de panier au local :
     let consol = localStorage.getItem(`Panier_achat`)
     consol = JSON.parse(consol)
@@ -901,10 +929,19 @@ if (localStorage.getItem("Panier_achat") !== null && localStorage.getItem("myboo
     for (let stokage of stokages) {
         mycartes.push(stokage)
     }
+
+    let deck = localStorage.getItem(`mydeck`)
+    deck = JSON.parse(deck)
+    for (let decks of deck) {
+        mydeck.push(decks)
+    }
+
 } else {
     localStorage.setItem('Panier_achat', JSON.stringify(Panier_achat));
     localStorage.setItem('myboosters', JSON.stringify(myboosters));
     localStorage.setItem('mycartes', JSON.stringify(mycartes));
+    localStorage.setItem('mydeck', JSON.stringify(mydeck));
+
 }
 
 
@@ -921,9 +958,8 @@ const mypacks = document.querySelector("#myboosters");
 const cart_list = document.querySelector("#cart-list");
 const cart_details = document.querySelector("#cart-details");
 const cart_collection = document.querySelector("#my_cart");
+const deeck = document.querySelector("#my-deck");
 // const affichage_cart = document.querySelector("#affichage_cart");
-console.log(cart_list)
-console.log(document.querySelector("#cart-details"));
 
 
 length_panier.textContent = Panier_achat.length;
@@ -1023,8 +1059,8 @@ function affichecart() {
             my_cart.id = "my_cart";
             my_cart.className = "my_cart";
             const cart_img = document.createElement('img');
-            cart_img.src = cartes[mycartes[i]].imga;
-            cart_img.alt = cartes[mycartes[i]].nom + " : " + cartes[mycartes[i]].description;
+            cart_img.src = cartes[mycartes[i] - 1].imga;
+            cart_img.alt = cartes[mycartes[i] - 1].nom + " : " + cartes[mycartes[i] - 1].description;
             cart_img.className = "cart_game";
             cart_img.dataset.name = `${mycartes[i]}`;
             my_cart.appendChild(cart_img);
@@ -1034,20 +1070,20 @@ function affichecart() {
 }
 
 // virifier le point de de data cart :
-function affiche() {
-    console.log("mycartes =", cartes);
-    console.log("cartes =", cartes);
+// function affiche() {
+//     console.log("mycartes =", cartes);
+//     console.log("cartes =", cartes);
 
-    for (let i = 0; i < cartes.length; i++) {
-        console.log("Loop index:", i+1);
-        console.log("Value:", cartes[i]);
+//     for (let i = 0; i < cartes.length; i++) {
+//         console.log("Loop index:", i+1);
+//         console.log("Value:", cartes[i]);
 
-        if (cartes[i] === undefined) {
-            console.error("PROBLEM: No card found for:", cartes[i]);
-        }
-    }
-}
-affiche()
+//         if (cartes[i] === undefined) {
+//             console.error("PROBLEM: No card found for:", cartes[i]);
+//         }
+//     }
+// }
+// affiche()
 
 // function de filtrage avec type :
 function affichecarteByType(type) {
@@ -1055,15 +1091,15 @@ function affichecarteByType(type) {
         cart_list.textContent = "";
         for (let i = 0; i < mycartes.length; i++) {
             console.log(type)
-            console.log(cartes[mycartes[i]].type === type)
-            if (cartes[mycartes[i]].type === type) {
+            console.log(cartes[mycartes[i] - 1].type === type)
+            if (cartes[mycartes[i] - 1].type === type) {
                 console.log(i);
                 const my_cart = document.createElement('div');
                 my_cart.id = "my_cart";
                 my_cart.className = "my_cart";
                 const cart_img = document.createElement('img');
-                cart_img.src = cartes[mycartes[i]].imga;
-                cart_img.alt = cartes[mycartes[i]].nom + " : " + cartes[mycartes[i]].description;
+                cart_img.src = cartes[mycartes[i] - 1].imga;
+                cart_img.alt = cartes[mycartes[i] - 1].nom + " : " + cartes[mycartes[i] - 1].description;
                 cart_img.className = "cart_game";
                 cart_img.dataset.name = `${mycartes[i]}`;
                 my_cart.appendChild(cart_img);
@@ -1074,20 +1110,20 @@ function affichecarteByType(type) {
 }
 
 // function de filtrage avec category :
-function affichecarteBycategory (category) {
+function affichecarteBycategory(category) {
     if (mycartes.length !== 0) {
         cart_list.textContent = "";
         for (let i = 0; i < mycartes.length; i++) {
-            if (cartes[mycartes[i]].categorie === category) {
+            if (cartes[mycartes[i] - 1].categorie === category) {
                 console.log(i);
                 const my_cart = document.createElement('div');
                 my_cart.id = "my_cart";
                 my_cart.className = "my_cart";
                 const cart_img = document.createElement('img');
-                cart_img.src = cartes[mycartes[i]].imga;
-                cart_img.alt = cartes[mycartes[i]].nom + " : " + cartes[mycartes[i]].description;
+                cart_img.src = cartes[mycartes[i] - 1].imga;
+                cart_img.alt = cartes[mycartes[i] - 1].nom + " : " + cartes[mycartes[i] - 1].description;
                 cart_img.className = "cart_game";
-                cart_img.dataset.name = `${mycartes[i]}`;
+                cart_img.dataset.name = `${mycartes[i] - 1}`;
                 my_cart.appendChild(cart_img);
                 cart_list.appendChild(my_cart);
             }
@@ -1121,6 +1157,103 @@ function imgclick() {
                 cart_details.appendChild(div);
             }
         })
+    })
+}
+
+// click en img pour ajoute a mon deck :
+function add_deck() {
+    const cart_collections = document.querySelectorAll("#my_cart");
+    Array.from(cart_collections).forEach(cart_collection => {
+        cart_collection.addEventListener('click', (e) => {
+            console.log(e.target.classList.contains('cart_game'));
+            if (e.target.classList.contains('cart_game')) {
+                let myid = e.target.dataset.name;
+                myid = Number(myid);
+                let trouve = false;
+                if (mydeck.length < 5) {
+                    for (let i = 0; i < mydeck.length; i++) {
+                        if (mydeck[i] === myid) {
+                            alert("deja cette cart dans votre deck");
+                            trouve = true;
+                            break;
+                        }
+                    }
+                    if (trouve === false) {
+                        mydeck.push(myid);
+                        localStorage.setItem('mydeck', JSON.stringify(mydeck));
+
+                        console.log(myid)
+                        console.log(cartes[myid - 1].id);
+
+
+                        const div = document.createElement('div');
+                        div.className = "deck-cart";
+                        div.id = "deck-cart";
+                        const img = document.createElement('img');
+                        img.src = cartes[myid - 1].imga;
+                        img.alt = cartes[myid - 1].nom + " : " + cartes[myid - 1].description;
+                        const btn = document.createElement('button');
+                        btn.textContent = "annuler";
+                        btn.className = "annuler";
+                        btn.id = "annuler";
+                        btn.name = `${myid}`;
+
+                        div.appendChild(img);
+                        div.appendChild(btn);
+                        deeck.appendChild(div);
+                    }
+                } else {
+                    alert("max de deck est 5");
+                }
+            }
+        })
+    })
+}
+
+
+// affichage de my deck :
+function affiche_deck() {
+    if (mydeck.length !== 0) {
+        for (let i = 0; i < mydeck.length; i++) {
+            const div = document.createElement('div');
+            div.className = "deck-cart";
+            div.id = "deck-cart";
+            const img = document.createElement('img');
+            img.src = cartes[mydeck[i] - 1].imga;
+            img.alt = cartes[mydeck[i] - 1].nom + " : " + cartes[mydeck[i] - 1].description;
+            const btn = document.createElement('button');
+            btn.textContent = "annuler";
+            btn.className = "annuler";
+            btn.id = "annuler";
+            btn.name = `${mydeck[i]}`;
+
+            div.appendChild(img);
+            div.appendChild(btn);
+            deeck.appendChild(div);
+
+        }
+    }
+}
+
+// function pour annuler
+function annuler_deck() {
+    deeck.addEventListener('click', (e) => {
+        console.log(e.target.classList.contains('annuler'))
+        if (e.target.classList.contains('annuler')) {
+            // part de localstorage 
+            let index = e.target.name;
+            index = Number(index);
+            let where = mydeck.indexOf(index);
+            mydeck.splice(where, 1);
+            localStorage.setItem('mydeck', JSON.stringify(mydeck));
+            console.log("virifier");
+            console.log(e.target.parentNode);
+            
+
+            // part de affichage :
+            let annuler_cart = e.target.parentNode;
+            annuler_cart.remove();
+        }
     })
 }
 
@@ -1435,5 +1568,80 @@ if (window.location.pathname === '/macollection.html') {
         affichecarteBycategory(category);
         imgclick()
     })
+
+}
+
+// Dom de page my deck : 
+
+if (window.location.pathname === "/mydeck.html") {
+    affichecart();
+    affiche_deck();
+    add_deck();
+    annuler_deck()
+
+
+    const tout = document.querySelector(".tout");
+    tout.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        deeck.textContent = "";
+        affichecart();
+        add_deck();
+        affiche_deck();
+        annuler_deck()
+    })
+
+    const hero_type = document.querySelector(".hero_type");
+    hero_type.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        deeck.textContent = "";
+
+        let type_name = e.target.name;
+
+        affichecarteByType(type_name);
+        add_deck();
+        affiche_deck();
+        annuler_deck()
+
+    })
+
+    const monstres_type = document.querySelector(".monstres_type");
+    monstres_type.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        deeck.textContent = "";
+
+        let type_name = e.target.name;
+
+        affichecarteByType(type_name);
+        add_deck();
+        affiche_deck();
+        annuler_deck()
+    })
+
+    const serviteurs_type = document.querySelector(".serviteurs_type");
+    serviteurs_type.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        deeck.textContent = "";
+
+        let type_name = e.target.name;
+
+        affichecarteByType(type_name);
+        add_deck();
+        affiche_deck();
+        annuler_deck()
+    })
+
+    const sorts_type = document.querySelector(".sorts_type");
+    sorts_type.addEventListener('click', (e) => {
+        cart_list.textContent = "";
+        deeck.textContent = "";
+
+        let type_name = e.target.name;
+
+        affichecarteByType(type_name);
+        add_deck();
+        affiche_deck();
+        annuler_deck()
+    })
+
 
 }

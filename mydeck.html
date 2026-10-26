@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYTHORIA</title>
+    <!-- links  -->
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <link rel="icon" href="./img/logomin.png">
+</head>
+
+<body>
+    <header>
+        <div class="header-contenue">
+            <div class="logo-header">
+                <a href="/" class="logo-a"><img src="./img/logoprincipal.png" alt="logo de web site des carts"></a>
+            </div>
+            <nav aria-label="Navigation principale">
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/boutique.html">Boutique</a></li>
+                    <li><a href="/votreboosters.html">Votre boosters</a></li>
+                    <li><a href="/macollection.html">Ma collection</a></li>
+                    <li><a href="/mydeck.html" class="lien-actif">Ma deck</a></li>
+                    <li><a href="/panier.html">panier :<span id="length_panier">0</span></a></li>
+                    <li><a href="/">Support</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="title-principal">
+            <img src="./img/logomin.png" alt="mini logo de web site des carts">
+            <h2>Création du deck :</h2>
+        </div>
+        <section>
+            <section>
+                <div class="boook">
+                    <div class="btn-filtre" id="btn-filtre">
+                        <button class="tout" name="tout">tout</button>
+                        <button class="hero_type" name="hero">hero</button>
+                        <button class="monstres_type" name="monstres">monstres</button>
+                        <button class="serviteurs_type" name="serviteur">serviteurs</button>
+                        <button class="sorts_type" name="sort">sorts</button>
+                    </div>
+                    <div class="book-cart" id="book-cart">
+                        <div class="cart-list" id="cart-list">
+                        </div>
+                        <div class="my-deck" id="my-deck">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+</body>
+
+</html>
