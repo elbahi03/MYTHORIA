@@ -386,8 +386,71 @@ header {
 .btn-filtre{
     display: flex;
     flex-direction: column;
+    width: 20%;
 }
 
 .book-cart {
     display: flex;
+    margin-bottom: 20px;
+
+}
+
+.cart-list{
+    /* width: 50%; */
+  width: 550px;
+  height: 620px;
+  overflow: auto;
+  scrollbar-width: none;
+  background-image: url(./img/bg-rigth.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-top: 70px;
+  padding-left: 120px;
+  padding-right: 50px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto auto auto;
+  
+}
+.cart-details{
+    width: 550px;
+  height: 620px;
+    background-image: url(./img/bg-left.png);
+  background-repeat: no-repeat;
+  background-size: 97%;
+  padding-top: 90px;
+  padding-right: 120px;
+  padding-left: 50px;
+  display: grid;
+
+}
+
+.carte_details {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.carte_details img {
+    margin: auto;
+}
+
+.btn-filtre {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: end;
+}
+
+.btn-filtre button {
+    width: 40%;
+    margin-right: -25px;
+    background-color: #EAAB62;
+    color: maroon;
+    transition: 0.5s;
+}
+
+.btn-filtre button:hover{
+    background-color: #EAAB62;
+    width: 50%;
 }

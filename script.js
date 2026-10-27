@@ -641,7 +641,6 @@ const cartes = [
                 nom: "Darkness Cover",
                 cout: ["fire", "fighting", "darkness"],
                 degats: 500,
-                effet: "Défaussez 3 Énergies de cette carte."
             },
             {
                 nom: "Soul",
@@ -1073,7 +1072,7 @@ function affichecart() {
             const cart_img = document.createElement('img');
             cart_img.src = cartes[mycartes[i] - 1].imga;
             cart_img.alt = cartes[mycartes[i] - 1].nom + " : " + cartes[mycartes[i] - 1].description;
-            cart_img.style.width = "250px";
+            cart_img.style.width = "100px";
             cart_img.style.height = "auto";
             cart_img.style.objectFit = "cover";
             cart_img.className = "cart_game";
@@ -1159,22 +1158,34 @@ function imgclick() {
         cart_collection.addEventListener('click', (e) => {
             console.log(e.target.classList.contains('cart_game'));
             if (e.target.classList.contains('cart_game')) {
-                cart_details.textContent = "";
+                cart_details.textContent = "";          
                 let myid = e.target.dataset.name;
                 myid = Number(myid);
                 const div = document.createElement('div');
                 div.id = "carte_details";
                 div.className = "carte_details";
-                const h3 = document.createElement('h3');
-                h3.textContent = cartes[myid - 1].nom;
+                const h3 = document.createElement('h2');
+                h3.textContent = "Nom : " + cartes[myid - 1].nom;
                 const desc = document.createElement('p');
-                desc.textContent = cartes[myid - 1].description;
+                desc.textContent = "description : " + cartes[myid - 1].description;
+                const category = document.createElement('p');
+                category.textContent = "categorie : " + cartes[myid - 1].categorie;
                 const p = document.createElement('p');
-                p.textContent = cartes[myid - 1].type;
+                p.textContent = "type :" + cartes[myid - 1].type;
+                const pv = document.createElement('p');
+                pv.textContent = "element : " + cartes[myid - 1].element;
+                const img = document.createElement('img');
+                img.src = cartes[myid - 1].imga ;
+                img.style.width = "175px";
+                img.style.height = "auto";
+                img.style.objectFit = "cover";
 
                 div.appendChild(h3);
                 div.appendChild(desc);
                 div.appendChild(p);
+                div.appendChild(category);
+                div.appendChild(pv);
+                div.appendChild(img)
                 cart_details.appendChild(div);
             }
         })
