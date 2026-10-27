@@ -1490,11 +1490,11 @@ if (window.location.pathname === '/votreboosters.html') {
             modal.appendChild(modal_content);
             affiche_lescartes.appendChild(modal);
 
-            // setTimeout(function () {
-            //     const yassine = document.getElementById('modal')
-            //     // yassine.style.display = 'none';
-            //     yassine.remove();
-            // }, 10000);
+            setTimeout(function () {
+                const yassine = document.getElementById('modal')
+                // yassine.style.display = 'none';
+                yassine.remove();
+            }, 10000);
 
             // retirer en node :
             const li = e.target.parentNode;
