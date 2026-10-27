@@ -983,9 +983,10 @@ function affichepanier() {
             console.log(boosters[Panier_achat[i] - 1])
             panier.innerHTML += `
                 <div class="achat" id="achat">
+                    <img src="${boosters[Panier_achat[i] - 1].icon}" width="200px" height="150px" >
                     <p>${boosters[Panier_achat[i] - 1].nom}</p>
                      <p>${boosters[Panier_achat[i] - 1].prix}</p>
-                    <button class="supprimer" name="${boosters[Panier_achat[i] - 1].id}">supprimer</button>
+                    <button class="supprimer btn btn-secondaire" name="${boosters[Panier_achat[i] - 1].id}">supprimer</button>
                 </div>
     `
         }
@@ -1033,15 +1034,22 @@ function ajouterProduit(index) {
     const achat = document.createElement('div');
     achat.className = "achat"
     achat.id = "achat"
+    const img = document.createElement('img');
+    img.src = `${boosters[index].icon}`;
+    img.alt = `${boosters[index].nom}` + " : " + `${boosters[index].description}`;
+    img.style.width = "250px";
+    img.style.height = "auto";
+    img.style.objectFit = "cover";
     const titre = document.createElement('p');
-    titre.textContent = `${boosters[index].nom}`
+    titre.textContent = `${boosters[index].nom}`;
     const p = document.createElement('p');
-    p.textContent = `${boosters[index].prix}`
+    p.textContent = `${boosters[index].prix}`;
     const btn = document.createElement('button');
     btn.textContent = 'supprimer';
-    btn.className = 'supprimer';
-    btn.name = `${boosters[index].id}`
+    btn.className = 'supprimer'  + " " + "btn" + " " + "btn-secondaire";
+    btn.name = `${boosters[index].id}`;
 
+    achat.appendChild(img);
     achat.appendChild(titre);
     achat.appendChild(p);
     achat.appendChild(btn);
@@ -1300,10 +1308,11 @@ if (window.location.pathname === '/boutique.html') {
     for (let i = 0; i < boosters.length; i++) {
         boutique.innerHTML += `
     <div class="booster">
+            <img src="${boosters[i].icon}" width="200px" height="150px" >
             <h3>${boosters[i].nom}</h3>
             <p>${boosters[i].prix} DH</p>
             <p>${boosters[i].nombreCartes} cartes</p>
-            <button class="ajouter" name="${boosters[i].id}"> Ajouter au panier</button>
+            <button class="ajouter btn btn-principal" name="${boosters[i].id}"> Ajouter au panier</button>
         </div>
     `
     }

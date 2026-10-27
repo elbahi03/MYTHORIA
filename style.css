@@ -274,12 +274,12 @@ header {
 
 /* page : botique  */
 
-.boutiques {
+/* .boutiques {
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .panier {
     display: grid;
@@ -289,11 +289,18 @@ header {
 }
 
 .achat {
-    background-color: #f1f1f1;
-    border: 1px solid black;
     padding: 10px;
     font-size: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.achat p {
+    color: #EAAB62;
+    font-size: 20px;
 }
 
 /* page : votreboosters.html */
