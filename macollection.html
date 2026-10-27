@@ -9,23 +9,24 @@
     <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
     <link rel="icon" href="./img/logomin.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <header>
-        <div class="header-contenue">
+<body class="bg-[#2E2F66ff] px-[20px]">
+    <header class="sticky top-0 z-100 w-[calc(100%+40px)] ml-[-20px] box-border bg-[#2E2F66ff] border-b-1px border-solid border-b-[#E5E7E]">
+        <div class="header-contenue flex h-[80px] items-center justify-between px-[40px]">
             <div class="logo-header">
-                <a href="/" class="logo-a"><img src="./img/logoprincipal.png" alt="logo de web site des carts"></a>
+                <a href="/" class="logo-a"><img src="./img/logoprincipal.png" alt="logo de web site des carts" class="h-[60px]" ></a>
             </div>
             <nav aria-label="Navigation principale">
-                <ul class="menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/boutique.html">Boutique</a></li>
-                    <li><a href="/votreboosters.html">Votre boosters</a></li>
-                    <li><a href="/macollection.html" class="lien-actif">Ma collection</a></li>
-                    <li><a href="/mydeck.html">Ma deck</a></li>
-                    <li><a href="/panier.html">panier :<span id="length_panier">0</span></a></li>
-                    <li><a href="/">Support</a></li>
+                <ul class="menu flex gap-[32px] list-none">
+                    <li><a href="/" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff] ">Home</a></li>
+                    <li><a href="/boutique.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Boutique</a></li>
+                    <li><a href="/votreboosters.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Votre boosters</a></li>
+                    <li><a href="/macollection.html" class="lien-actif text-[#9FB4DBff] text-[20px] pb-[4px] border-b-[#9FB4DBff]">Ma collection</a></li>
+                    <li><a href="/mydeck.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Ma deck</a></li>
+                    <li><a href="/panier.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">panier :<span id="length_panier">0</span></a></li>
+                    <li><a href="/" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Support</a></li>
                 </ul>
             </nav>
         </div>

@@ -15,11 +15,11 @@
 * {
     font-family: "Manufacturing Consent", system-ui, sans-serif;
 }
-
+/* 
 body {
     background-color: #2E2F66ff;
     padding: 0 20px;
-}
+} */
 
 a {
     text-decoration: none;
@@ -68,7 +68,7 @@ a:focus-visible,
     transform: scale(1.1);
     outline-offset: 2px;
 }
-
+/* 
 .title-principal {
     display: flex;
     gap: 10px;
@@ -83,10 +83,10 @@ a:focus-visible,
 .title-principal h2 {
     font-size: 39px;
     color: #EAAB62;
-}
+} */
 
 /* section : header  */
-
+/* 
 header {
     position: sticky;
     top: 0;
@@ -135,12 +135,12 @@ header {
 
 .menu a:hover {
     color: #9FB4DBff;
-}
+} */
 
 /* page : home */
 
 /* section : hero  */
-
+/* 
 .hero {
     background-image: url(./img/bghero.jpg);
     background-repeat: no-repeat;
@@ -165,10 +165,10 @@ header {
     flex-direction: row;
     gap: 25px;
     align-items: center;
-}
+} */
 
 /* section : les categorie  */
-
+/* 
 .cartes-categorie {
     display: flex;
     gap: 10px;
@@ -216,22 +216,20 @@ header {
 
 .carte-categorie:hover .carte-img img {
     transform: scale(1.1);
-}
+} */
 
 /* section : boosters  */
 
-.boosters {
+/* .boosters {
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
-}
+    margin-bottom: 10px;
+} */
 
 .booster {
-    width: 20%;
-    height: 250px;
-    background-image: url("./img/bg-booster.jpg");
+    width: 25%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -243,8 +241,9 @@ header {
 }
 
 .bosster-img {
-    width: 80%;
+    width: 70%;
     height: 350px;
+    margin-bottom: 20px;
 }
 
 .bosster-img img {
@@ -257,12 +256,14 @@ header {
     font-size: 30px;
     color: #EAAB62;
     text-decoration: underline;
+    margin-bottom: 20px;
 }
 
 .booster p {
     margin-top: -25px;
     color: #9FB4DBff;
     font-size: 30px;
+    margin-bottom: 20px;
 }
 
 .btn-booster {
@@ -296,12 +297,12 @@ header {
 }
 
 /* page : votreboosters.html */
-
+/* 
 .myboosters {
     display: flex;
     overflow-x: scroll;
     scrollbar-width: none;
-}
+} */
 
 /* .mybooster img {
     width: 200%;

@@ -9,78 +9,79 @@
     <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
     <link rel="icon" href="./img/logomin.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <header>
-        <div class="header-contenue">
+<body class="bg-[#2E2F66ff] px-[20px]" >
+    <header class="sticky top-0 z-100 w-[calc(100%+40px)] ml-[-20px] box-border bg-[#2E2F66ff] border-b-1px border-solid border-b-[#E5E7E]">
+        <div class="header-contenue flex h-[80px] items-center justify-between px-[40px]">
             <div class="logo-header">
-                <a href="/" class="logo-a"><img src="./img/logoprincipal.png" alt="logo de web site des carts"></a>
+                <a href="/" class="logo-a"><img src="./img/logoprincipal.png" alt="logo de web site des carts" class="h-[60px]" ></a>
             </div>
             <nav aria-label="Navigation principale">
-                <ul class="menu">
-                    <li><a href="/" class="lien-actif">Home</a></li>
-                    <li><a href="/boutique.html">Boutique</a></li>
-                    <li><a href="/votreboosters.html">Votre boosters</a></li>
-                    <li><a href="/macollection.html">Ma collection</a></li>
-                    <li><a href="/mydeck.html">Ma deck</a></li>
-                    <li><a href="/panier.html">panier :<span id="length_panier">0</span></a></li>
-                    <li><a href="/">Support</a></li>
+                <ul class="menu flex gap-[32px] list-none">
+                    <li><a href="/" class="lien-actif text-[#9FB4DBff] text-[20px] pb-[4px] border-b-[#9FB4DBff] ">Home</a></li>
+                    <li><a href="/boutique.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Boutique</a></li>
+                    <li><a href="/votreboosters.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Votre boosters</a></li>
+                    <li><a href="/macollection.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Ma collection</a></li>
+                    <li><a href="/mydeck.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Ma deck</a></li>
+                    <li><a href="/panier.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">panier :<span id="length_panier">0</span></a></li>
+                    <li><a href="/" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Support</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section class="hero">
+        <section class="hero  bg-[url('./img/bghero.jpg')] bg-no-repeat  bg-size-[100%] h-[600px] flex flex-col justify-center items-center z-100 w-[calc(100%+40px)] ml-[-20px]" >
             <img src="./img/logoprincipal.png" alt="logo de web site des carts" height="300px" width="750px">
-            <h1>Collect Build Battle</h1>
-            <div class="btn-hero">
+            <h1 class="text-[45px] text-[#EAAB62]">Collect Build Battle</h1>
+            <div class="btn-hero flex flex-row gap-[25px] items-center">
                 <button class="btn btn-principal">Découvrir les boosters</button>
                 <button class="btn btn-secondaire">Ouvrir mon grimoire</button>
             </div>
         </section>
-        <section>
-            <div class="title-principal">
-                <img src="./img/logomin.png" alt="mini logo de web site des carts">
-                <h2>Les catégories de cartes :</h2>
+        <section class="mt-[20px]">
+            <div class="title-principal flex gap-[10px] items-center">
+                <img src="./img/logomin.png" alt="mini logo de web site des carts" class="object-cover h-[75px]">
+                <h2 class="text-[50px] text-[#EAAB62]">Les catégories de cartes :</h2>
             </div>
-            <div class="cartes-categorie">
-                <div class="carte-categorie">
-                    <h3>héros</h3>
-                    <p>Serviteurs de la Lumière</p>
-                    <div class="carte-img">
-                        <img src="./img/hero.png" alt="Serviteurs de la Lumière">
+            <div class="cartes-categorie flex gap-[10px] items-center justify-center mb-[40px]">
+                <div class="carte-categorie w-[20%] h-[400px] bg-[url('./img/bg-cart.jpg')] bg-size-[100% 100%] bg-no-repeat bg-center flex flex-col justify-center items-center px-[15px] py-[20px]" >
+                    <h3 class=" text-[40px] text-[#3E498Aff] decoration-2">héros</h3>
+                    <p class="mt-[-25px] text-[#9FB4DBff] text-[30px] mb-[30px]">Serviteurs de la Lumière</p>
+                    <div class="carte-img w-[80%] h-[350px] ">
+                        <img src="./img/hero.png" alt="Serviteurs de la Lumière" class="w-[100%] items-center hover:scale-[1.1]">
                     </div>
                 </div>
-                <div class="carte-categorie">
-                    <h3>monstres</h3>
-                    <p>Serviteurs des Ténèbres</p>
-                    <div class="carte-img">
-                        <img src="./img/monster.png" alt="Serviteurs des Ténèbres">
+                <div class="carte-categorie w-[20%] h-[400px] bg-[url('./img/bg-cart.jpg')] bg-size-[100% 100%] bg-no-repeat bg-center flex flex-col justify-center items-center px-[15px] py-[20px]">
+                    <h3 class=" text-[40px] text-[#3E498Aff] decoration-2">monstres</h3>
+                    <p class="mt-[-25px] text-[#9FB4DBff] text-[30px] mb-[30px]">Serviteurs des Ténèbres</p>
+                    <div class="carte-img w-[80%] h-[350px]">
+                        <img src="./img/monster.png" alt="Serviteurs des Ténèbres" class="w-[100%] items-center hover:scale-[1.1]">
                     </div>
                 </div>
-                <div class="carte-categorie">
-                    <h3>serviteurs</h3>
-                    <p>Minions</p>
-                    <div class="carte-img">
-                    <img src="./img/serviteurs.png" alt="Minions" height="250px">
+                <div class="carte-categorie  w-[20%] h-[400px] bg-[url('./img/bg-cart.jpg')] bg-size-[100% 100%] bg-no-repeat bg-center flex flex-col justify-center items-center px-[15px] py-[20px]">
+                    <h3 class=" text-[40px] text-[#3E498Aff] decoration-2" >serviteurs</h3>
+                    <p class="mt-[-25px] text-[#9FB4DBff] text-[30px] " >Minions</p>
+                    <div class="carte-img w-[80%] h-[350px]">
+                    <img src="./img/serviteurs.png" alt="Minions" height="250px" class="w-[100%] items-center hover:scale-[1.1]">
                     </div>
                 </div>
-                <div class="carte-categorie">
-                    <h3>sorts</h3>
-                    <p>Spells</p>
-                    <div class="carte-img">
-                    <img src="./img/Spells.png" alt="Spells">
+                <div class="carte-categorie  w-[20%] h-[400px] bg-[url('./img/bg-cart.jpg')] bg-size-[100% 100%] bg-no-repeat bg-center flex flex-col justify-center items-center px-[15px] py-[20px]">
+                    <h3 class=" text-[40px] text-[#3E498Aff] decoration-2" >sorts</h3>
+                    <p class="mt-[-25px] text-[#9FB4DBff] text-[30px] mb-[30px]" >Spells</p>
+                    <div class="carte-img w-[80%] h-[350px]">
+                    <img src="./img/Spells.png" alt="Spells" class="w-[100%] items-center hover:scale-[1.1]">
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="title-principal">
-                <img src="./img/logomin.png" alt="mini logo de web site des carts">
-                <h2>les boosters disponibles :</h2>
+        <section class="mt-[20px] mb-[20px]">
+            <div class="title-principal flex gap-[10px] items-center">
+                <img src="./img/logomin.png" alt="mini logo de web site des carts" class="object-cover h-[75px]">
+                <h2 class="text-[50px] text-[#EAAB62]">les boosters disponibles :</h2>
             </div>
-            <div class="boosters" id="boosters">
+            <div class="boosters flex gap-[20px] items-center justify-center mb-[10px] mt-[20px]" id="boosters">
             </div>
             <button class="btn btn-principal btn-booster">Découvrir les boosters</button>
         </section>

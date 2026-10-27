@@ -984,7 +984,7 @@ function affichepanier() {
             panier.innerHTML += `
                 <div class="achat" id="achat">
                     <p>${boosters[Panier_achat[i] - 1].nom}</p>
-                    <p>${boosters[Panier_achat[i] - 1].prix}</p>
+                     <p>${boosters[Panier_achat[i] - 1].prix}</p>
                     <button class="supprimer" name="${boosters[Panier_achat[i] - 1].id}">supprimer</button>
                 </div>
     `
@@ -1282,6 +1282,7 @@ if (window.location.pathname === '/') {
     for (let i = 0; i < boosters.length; i++) {
         packes.innerHTML += `
     <div class="booster">
+            <img src="${boosters[i].icon}" width="200px" height="150px" >
             <h3>${boosters[i].nom}</h3>
             <p>${boosters[i].prix} DH</p>
             <p>${boosters[i].nombreCartes} cartes</p>
