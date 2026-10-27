@@ -315,6 +315,68 @@ header {
     width: 200%;
 } */
 
+.mybooster{
+    width: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* part affiche les cart */
+.affiche_lescartes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal-content h2 {
+    font-size: 40px;
+    color: #EAAB62;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.model_cart {
+    display: flex;
+    gap: 20px;
+}
+
+.modal_cart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_cart h3 {
+    font-size: 25px;
+    color: #EAAB62;
+}
+
+.modal_cart p {
+    font-size: 20px;
+    color: #EAAB62;
+}
+
 /* page mon cart  */
 
 .boook{

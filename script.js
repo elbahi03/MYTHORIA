@@ -955,6 +955,7 @@ const packes = document.querySelector("#boosters");
 const achat = document.querySelectorAll("achat");
 const button = document.getElementById("valider-btn");
 const mypacks = document.querySelector("#myboosters");
+const affiche_lescartes = document.querySelector("#affiche_lescartes")
 const cart_list = document.querySelector("#cart-list");
 const cart_details = document.querySelector("#cart-details");
 const cart_collection = document.querySelector("#my_cart");
@@ -1006,14 +1007,14 @@ function affichemyboosters() {
             const pack = document.createElement("img");
             pack.src = boosters[myboosters[i] - 1].icon;
             pack.alt = boosters[myboosters[i] - 1].nom + " : " + boosters[myboosters[i] - 1].description;
-            pack.style.width = "250px";
+            pack.style.width = "500px";
             pack.style.height = "auto";
             pack.style.objectFit = "cover";
             const nom = document.createElement("h3");
             nom.textContent = boosters[myboosters[i] - 1].nom;
             const btn = document.createElement("button");
             btn.textContent = "Open votre Booster";
-            btn.className = "open";
+            btn.className = "open" + " " + "btn" + " " + "btn-secondaire";
             btn.id = "open";
             btn.name = `${myboosters[i]}`;
             div_img.appendChild(pack);
@@ -1046,7 +1047,7 @@ function ajouterProduit(index) {
     p.textContent = `${boosters[index].prix}`;
     const btn = document.createElement('button');
     btn.textContent = 'supprimer';
-    btn.className = 'supprimer'  + " " + "btn" + " " + "btn-secondaire";
+    btn.className = 'supprimer' + " " + "btn" + " " + "btn-secondaire";
     btn.name = `${boosters[index].id}`;
 
     achat.appendChild(img);
@@ -1439,24 +1440,23 @@ if (window.location.pathname === '/votreboosters.html') {
             const modal_content = document.createElement('div');
             modal_content.id = "modal-content";
             modal_content.className = "modal-content";
-            /// span * 
-            const span = document.createElement('span');
-            span.textContent = "&times;";
-            span.className = "close";
-            span.id = "close";
-            /// contenant de div
+            /// contenant de div .
             const titre_modal = document.createElement('h2');
+            titre_modal.textContent = "votre cartes"
             const model_cart = document.createElement('div');
             model_cart.id = "model_cart";
             model_cart.className = "model_cart";
             for (let i = 0; i < local_cart.length; i++) {
                 console.log(i);
-                let carte = document.createElement('div');
-                carte.className = "modal";
-                carte.id = "modal";
+                const carte = document.createElement('div');
+                carte.className = "modal_cart";
+                carte.id = "modal_cart";
                 const img_cart = document.createElement('img');
                 img_cart.src = cartes[local_cart[i] - 1].imga;
                 img_cart.alt = cartes[local_cart[i] - 1].nom + " : " + cartes[local_cart[i] - 1].description;
+                img_cart.style.width = "250px";
+                img_cart.style.height = "auto";
+                img_cart.style.objectFit = "cover";
                 const h3 = document.createElement('h3');
                 h3.textContent = cartes[local_cart[i] - 1].nom;
                 const p = document.createElement('p');
@@ -1469,7 +1469,7 @@ if (window.location.pathname === '/votreboosters.html') {
             }
 
             const btn_modal = document.createElement("button");
-            btn_modal.className = "to_pagecarte";
+            btn_modal.className = "to_pagecarte"+ " btn btn-principal";
             btn_modal.id = "to_pagecarte";
             btn_modal.textContent = "voir votre les cartes"
 
@@ -1477,26 +1477,14 @@ if (window.location.pathname === '/votreboosters.html') {
             modal_content.appendChild(model_cart);
             modal_content.appendChild(btn_modal);
             modal.appendChild(modal_content);
-            mypacks.appendChild(modal);
+            affiche_lescartes.appendChild(modal);
 
-            setTimeout(function () {
-                const yassine = document.getElementById('modal')
-                // yassine.style.display = 'none';
-                yassine.remove();
-            }, 5000);
+            // setTimeout(function () {
+            //     const yassine = document.getElementById('modal')
+            //     // yassine.style.display = 'none';
+            //     yassine.remove();
+            // }, 10000);
 
-            // // Get the modal
-            // const modal_page = document.getElementById("modal");
-            // const span_close = document.getElementsByClassName("close");
-            // modal_page.style.display = "block";
-            // span_close.onclick = function () {
-            //     modal.style.display = "none";
-            // }
-            // window.onclick = function (event) {
-            //     if (event.target == modal) {
-            //         modal.style.display = "none";
-            //     }
-            // }
             // retirer en node :
             const li = e.target.parentNode;
             li.remove();

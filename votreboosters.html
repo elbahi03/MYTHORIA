@@ -12,34 +12,50 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-[#2E2F66ff] px-[20px]" >
-    
-    <header class="sticky top-0 z-100 w-[calc(100%+40px)] ml-[-20px] box-border bg-[#2E2F66ff] border-b-1px border-solid border-b-[#E5E7E]">
+<body class="bg-[#2E2F66ff] px-[20px]">
+
+    <header
+        class="sticky top-0 z-100 w-[calc(100%+40px)] ml-[-20px] box-border bg-[#2E2F66ff] border-b-1px border-solid border-b-[#E5E7E]">
         <div class="header-contenue flex h-[80px] items-center justify-between px-[40px]">
             <div class="logo-header">
-                <a href="/" class="logo-a"><img src="./img/logoprincipal.png" alt="logo de web site des carts" class="h-[60px]" ></a>
+                <a href="/" class="logo-a"><img src="./img/logoprincipal.png" alt="logo de web site des carts"
+                        class="h-[60px]"></a>
             </div>
             <nav aria-label="Navigation principale">
                 <ul class="menu flex gap-[32px] list-none">
                     <li><a href="/" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff] ">Home</a></li>
-                    <li><a href="/boutique.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Boutique</a></li>
-                    <li><a href="/votreboosters.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Votre boosters</a></li>
-                    <li><a href="/macollection.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Ma collection</a></li>
-                    <li><a href="/mydeck.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Ma deck</a></li>
-                    <li><a href="/panier.html" class="lien-actif text-[#9FB4DBff] text-[20px] pb-[4px] border-b-[#9FB4DBff]">panier :<span id="length_panier">0</span></a></li>
+                    <li><a href="/boutique.html"
+                            class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Boutique</a></li>
+                    <li><a href="/votreboosters.html"
+                            class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Votre boosters</a></li>
+                    <li><a href="/macollection.html"
+                            class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Ma collection</a></li>
+                    <li><a href="/mydeck.html" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Ma
+                            deck</a></li>
+                    <li><a href="/panier.html"
+                            class="lien-actif text-[#9FB4DBff] text-[20px] pb-[4px] border-b-[#9FB4DBff]">panier :<span
+                                id="length_panier">0</span></a></li>
                     <li><a href="/" class="text-[#EAAB62] text-[20px] pb-[4px] hover:text-[#9FB4DBff]">Support</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <div class="title-principal">
-            <img src="./img/logomin.png" alt="mini logo de web site des carts">
-            <h2>Votre boosters :</h2>
+        <div class="title-principal flex gap-[10px] items-center mt-[20px] mb-[20px]">
+            <img src="./img/logomin.png" alt="mini logo de web site des carts" class="object-cover h-[75px]">
+            <h2 class="text-[50px] text-[#EAAB62]">Votre boosters :</h2>
         </div>
         <section>
-
             <div id="myboosters" class="myboosters flex overflow-x-scroll scrollbar-none gap-[20px]">
+            </div>
+        </section>
+        <section>
+            <div class="title-principal flex gap-[10px] items-center mt-[20px] mb-[20px]">
+                <img src="./img/logomin.png" alt="mini logo de web site des carts" class="object-cover h-[75px]">
+                <h2 class="text-[50px] text-[#EAAB62]">Votre carts :</h2>
+            </div>
+            <div class="affiche_lescartes" id="affiche_lescartes">
+
             </div>
         </section>
     </main>
