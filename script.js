@@ -1224,7 +1224,7 @@ function add_deck() {
                         const img = document.createElement('img');
                         img.src = cartes[myid - 1].imga;
                         img.alt = cartes[myid - 1].nom + " : " + cartes[myid - 1].description;
-                        img.style.width = "250px";
+                        img.style.width = "100px";
                         img.style.height = "auto";
                         img.style.objectFit = "cover";
                         const btn = document.createElement('button');
@@ -1256,7 +1256,7 @@ function affiche_deck() {
             const img = document.createElement('img');
             img.src = cartes[mydeck[i] - 1].imga;
             img.alt = cartes[mydeck[i] - 1].nom + " : " + cartes[mydeck[i] - 1].description;
-            img.style.width = "250px";
+            img.style.width = "100px";
             img.style.height = "auto";
             img.style.objectFit = "cover";
             const btn = document.createElement('button');
